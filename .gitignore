@@ -1,0 +1,11 @@
+# Source files — not needed to serve the site
+Recursos/
+
+# Unused original hero video (20MB); the live hero is a canvas gradient
+assets/video/hero.mp4
+
+# Local / editor
+.DS_Store
+Thumbs.db
+tmp_extract/
+*.log

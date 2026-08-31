@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bárbara Ruiz · Diseñadora Gráfica</title>
+  <meta name="description" content="Diseño gráfico con carácter: identidad visual, publicidad, redes sociales y material POP. Bárbara Ruiz convierte marcas en sistemas que se recuerdan y se eligen." />
+  <meta name="theme-color" content="#4C1A58" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="preloader" id="preloader">
+    <div class="preloader__inner">
+      <svg class="preloader__logo" viewBox="0 0 88 88" fill="none">
+        <path class="preloader__path" d="M18 14v60M18 14h28c13.5 0 24 8.2 24 20.2 0 8.6-5.2 15.4-13.8 18.4 10.6 2.4 17.8 10.2 17.8 21.2 0 13-11.6 20.2-28 20.2H18M46 44.6L74 74" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p>Bárbara Ruiz</p>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <a class="brand" href="#inicio">
+      <span class="brand__mark">
+        <svg viewBox="0 0 88 88" fill="none"><path d="M18 14v60M18 14h28c13.5 0 24 8.2 24 20.2 0 8.6-5.2 15.4-13.8 18.4 10.6 2.4 17.8 10.2 17.8 21.2 0 13-11.6 20.2-28 20.2H18M46 44.6L74 74" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="brand__text">
+        <strong>Bárbara Ruiz</strong>
+        <small>Diseñadora Gráfica</small>
+      </span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto" class="nav__cta">Contacto</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay">
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero__fluid" aria-hidden="true">
+        <img class="hero__video" src="assets/img/degradado.jpg" alt="" />
+        <canvas class="hero__liquid" id="heroLiquid"></canvas>
+      </div>
+      <svg class="hero__wave hero__wave--left" viewBox="0 0 600 800" fill="none" aria-hidden="true">
+        <path d="M-20 720 C 80 620, 40 480, 160 400 S 220 220, 80 40" stroke="white" stroke-width="1.6"/>
+      </svg>
+      <svg class="hero__wave hero__wave--right" viewBox="0 0 400 320" fill="none" aria-hidden="true">
+        <path d="M40 20 C 180 40, 220 140, 380 90" stroke="white" stroke-width="1.6"/>
+      </svg>
+      <div class="hero__content">
+        <p class="eyebrow reveal">Diseño gráfico · Marca personal</p>
+        <h1 class="hero__title">
+          <span class="line">Diseño que se</span>
+          <span class="line">recuerda.</span>
+        </h1>
+        <p class="hero__sub">Identidad, campañas y piezas que hacen que tu negocio se vea tan claro como vende.</p>
+        <div class="hero__actions">
+          <a class="btn btn--ghost" href="#proyectos">Ver proyectos</a>
+          <a class="btn btn--solid" href="#contacto">Empezar un proyecto</a>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#manifiesto">
+        <span>Scroll</span>
+        <i></i>
+      </a>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Identidad visual · Anuncios · Redes sociales · Merch y POP · Branding · Dirección de arte · Identidad visual · Anuncios · Redes sociales · Merch y POP · Branding · Dirección de arte ·</span>
+        <span>Identidad visual · Anuncios · Redes sociales · Merch y POP · Branding · Dirección de arte · Identidad visual · Anuncios · Redes sociales · Merch y POP · Branding · Dirección de arte ·</span>
+      </div>
+    </div>
+
+    <section class="manifesto" id="manifiesto">
+      <div class="container">
+        <p class="manifesto__kicker reveal">No diseño para decorar.</p>
+        <h2 class="manifesto__title">
+          <span class="reveal-line">Diseño para que te elijan:</span>
+          <span class="reveal-line">con una marca nítida, piezas que venden</span>
+          <span class="reveal-line">y un estilo que no se diluye.</span>
+        </h2>
+      </div>
+    </section>
+
+    <section class="about" id="sobre-mi">
+      <div class="container about__grid">
+        <div class="about__copy">
+          <p class="section-kicker reveal">Sobre mí</p>
+          <h2 class="section-title reveal">Una diseñadora que traduce negocio en imagen.</h2>
+          <p class="reveal">Soy Bárbara Ruiz. Trabajo identidad visual, publicidad, redes y material POP para marcas que necesitan verse profesionales sin perder carácter.</p>
+          <p class="reveal">Cada proyecto empieza por lo que tienes que comunicar y a quién. El resultado es un sistema visual claro: se reconoce, se aplica y se recuerda.</p>
+          <a class="btn btn--outline" href="#contacto">Hablemos de tu marca</a>
+          <p class="about__note">De la idea a la pieza lista para producir o publicar.</p>
+        </div>
+        <div class="about__visual" aria-hidden="true">
+          <div class="pill pill--gradient delay-1"></div>
+          <div class="pill pill--photo delay-2">
+            <img src="assets/img/portrait-about.jpg" alt="Retrato de Bárbara Ruiz" />
+          </div>
+          <div class="pill pill--collage delay-3">
+            <video autoplay muted loop playsinline preload="metadata" poster="assets/img/portrait-collage.png">
+              <source src="assets/video/reel.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="pill pill--solid delay-4"></div>
+        </div>
+      </div>
+      <div class="about__bar"></div>
+    </section>
+
+    <section class="services" id="servicios">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker reveal">Servicios</p>
+          <h2 class="section-title reveal">Cuatro formas de hacer que tu marca trabaje.</h2>
+          <p class="section-lead reveal">No vendo “diseños sueltos”. Construyo piezas que se reconocen, se aplican y convierten atención en clientes.</p>
+        </div>
+
+        <div class="services__grid">
+          <a class="svc svc--tall" href="#identidad">
+            <img src="assets/img/svc-identidad.jpg" alt="Identidad visual Estudio G404" />
+            <div class="svc__overlay"></div>
+            <div class="svc__content">
+              <span>01</span>
+              <h3>Identidad Visual</h3>
+              <p>Logo, color y sistema para que te reconozcan a primera vista.</p>
+            </div>
+            <div class="svc__marquee"><span>Identidad Visual · Identidad Visual · Identidad Visual ·</span></div>
+          </a>
+          <a class="svc" href="#anuncios">
+            <img src="assets/img/svc-ads.jpg" alt="Anuncio Distribuidora V&G" />
+            <div class="svc__overlay"></div>
+            <div class="svc__content">
+              <span>02</span>
+              <h3>Anuncios publicitarios</h3>
+              <p>Piezas que venden. Composición, mensaje y impacto en un vistazo.</p>
+            </div>
+            <div class="svc__marquee"><span>Anuncios · Anuncios · Anuncios ·</span></div>
+          </a>
+          <a class="svc svc--tall svc--right" href="#merch">
+            <img src="assets/img/svc-merch.jpg" alt="Lanyard IVALPRO" />
+            <div class="svc__overlay"></div>
+            <div class="svc__content">
+              <span>04</span>
+              <h3>Merch y material POP</h3>
+              <p>La marca fuera de la pantalla: lo que se toca, se usa y se recuerda.</p>
+            </div>
+            <div class="svc__marquee"><span>Merch y POP · Merch y POP · Merch y POP ·</span></div>
+          </a>
+          <a class="svc" href="#redes">
+            <img src="assets/img/svc-social.jpg" alt="Feed de redes sociales" />
+            <div class="svc__overlay"></div>
+            <div class="svc__content">
+              <span>03</span>
+              <h3>Redes sociales</h3>
+              <p>Un feed coherente que parece marca, no un collage improvisado.</p>
+            </div>
+            <div class="svc__marquee"><span>Redes Sociales · Redes Sociales · Redes Sociales ·</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="proyectos">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker reveal">Portafolio</p>
+          <h2 class="section-title reveal">Algunos proyectos</h2>
+          <p class="section-lead reveal">Identidades, campañas y piezas reales. Cada una resuelve un problema concreto de marca.</p>
+        </div>
+        <div class="slider-wrap">
+          <div class="slider" id="projectSlider">
+            <article class="slide">
+              <div class="slide__media leaf">
+                <img src="assets/img/proj-g404.jpg" alt="Identidad Estudio G404" />
+              </div>
+              <div class="slide__meta">
+                <h3>Estudio G404</h3>
+                <p>Identidad visual</p>
+              </div>
+            </article>
+            <article class="slide">
+              <div class="slide__media leaf slide__media--contain">
+                <img src="assets/img/proj-dipollos.png" alt="Logo Di-Pollos" />
+              </div>
+              <div class="slide__meta">
+                <h3>Di-Pollos</h3>
+                <p>Branding · “Tu hogar, tu ritmo, tu pollo”</p>
+              </div>
+            </article>
+            <article class="slide">
+              <div class="slide__media leaf">
+                <img src="assets/img/proj-networking.jpg" alt="Networking HUB" />
+              </div>
+              <div class="slide__meta">
+                <h3>Networking HUB</h3>
+                <p>Identidad digital</p>
+              </div>
+            </article>
+            <article class="slide">
+              <div class="slide__media leaf">
+                <img src="assets/img/proj-cambre.jpg" alt="Club Béisbol y Sófbol Cambre" />
+              </div>
+              <div class="slide__meta">
+                <h3>CBS Cambre</h3>
+                <p>Campaña 35 aniversario</p>
+              </div>
+            </article>
+            <article class="slide">
+              <div class="slide__media leaf">
+                <img src="assets/img/proj-marka.jpg" alt="Marka beciña" />
+              </div>
+              <div class="slide__meta">
+                <h3>Marka beciña</h3>
+                <p>Identidad de marca</p>
+              </div>
+            </article>
+            <article class="slide">
+              <div class="slide__media leaf">
+                <img src="assets/img/svc-ads.jpg" alt="Distribuidora V&amp;G" />
+              </div>
+              <div class="slide__meta">
+                <h3>Distribuidora V&amp;G</h3>
+                <p>Anuncio publicitario</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="slider-nav">
+          <button class="nav-circle" id="prevProject" type="button" aria-label="Anterior">‹</button>
+          <button class="nav-circle" id="nextProject" type="button" aria-label="Siguiente">›</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" id="identidad">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker reveal">Identidad visual</p>
+          <h2 class="section-title reveal">Marcas que ya ocupan su espacio.</h2>
+        </div>
+        <div class="gallery__grid">
+          <figure class="leaf-card">
+            <img src="assets/img/proj-g404.jpg" alt="Estudio G404" />
+            <figcaption><strong>Estudio G404</strong><span>Identidad tech</span></figcaption>
+          </figure>
+          <figure class="leaf-card">
+            <img src="assets/img/proj-dipollos.png" alt="Di-Pollos" />
+            <figcaption><strong>Di-Pollos</strong><span>Branding gastronómico</span></figcaption>
+          </figure>
+          <figure class="leaf-card">
+            <img src="assets/img/proj-networking.jpg" alt="Networking HUB" />
+            <figcaption><strong>Networking HUB</strong><span>Marca de comunidad</span></figcaption>
+          </figure>
+          <figure class="leaf-card" id="anuncios">
+            <img src="assets/img/proj-cambre.jpg" alt="CBS Cambre" />
+            <figcaption><strong>CBS Cambre</strong><span>Campaña deportiva</span></figcaption>
+          </figure>
+          <figure class="leaf-card">
+            <img src="assets/img/proj-marka.jpg" alt="Marka beciña" />
+            <figcaption><strong>Marka beciña</strong><span>Identidad local</span></figcaption>
+          </figure>
+          <figure class="leaf-card leaf-card--cta" id="redes">
+            <div>
+              <p>¿La siguiente eres tú?</p>
+              <a class="btn btn--solid" href="#contacto">Quiero mi marca</a>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" id="merch">
+      <div class="cta-band__bg"></div>
+      <div class="cta-band__content">
+        <p class="cta-band__phrase">Si tu marca no se recuerda, no existe.</p>
+        <div class="cta-band__brand">
+          <span class="brand__mark">
+            <svg viewBox="0 0 88 88" fill="none"><path d="M18 14v60M18 14h28c13.5 0 24 8.2 24 20.2 0 8.6-5.2 15.4-13.8 18.4 10.6 2.4 17.8 10.2 17.8 21.2 0 13-11.6 20.2-28 20.2H18M46 44.6L74 74" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <strong>Bárbara Ruiz</strong>
+          <small>Diseñadora Gráfica</small>
+        </div>
+        <a class="btn btn--ghost" href="#contacto">Contacto</a>
+        <div class="cta-band__social">
+          <a href="https://www.linkedin.com/in/barbararuizdg" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 11v5M8 8h.01M12 16v-5c1.5 0 3 1 3 3v2"/></svg>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="container contact__grid">
+        <div>
+          <p class="section-kicker reveal">Contacto</p>
+          <h2 class="section-title reveal">Cuéntame qué necesita tu marca.</h2>
+          <p class="section-lead reveal">Respuesta directa por WhatsApp. Si tienes briefing, logo actual o referencias, mejor: llegamos antes al resultado.</p>
+          <ul class="contact__points">
+            <li>Identidad nueva o rediseño</li>
+            <li>Campaña, redes o material POP</li>
+            <li>Proyectos para pymes, clubs y marcas locales</li>
+          </ul>
+        </div>
+        <form class="contact__form" id="contactForm">
+          <label>
+            Nombre
+            <input type="text" name="name" required placeholder="Tu nombre" />
+          </label>
+          <label>
+            Proyecto
+            <select name="type" required>
+              <option value="" disabled selected>Qué necesitas</option>
+              <option>Identidad visual</option>
+              <option>Anuncios publicitarios</option>
+              <option>Redes sociales</option>
+              <option>Merch y material POP</option>
+              <option>Otro / varios</option>
+            </select>
+          </label>
+          <label>
+            Mensaje
+            <textarea name="message" rows="4" required placeholder="Marca, plazo y qué quieres lograr"></textarea>
+          </label>
+          <button class="btn btn--solid" type="submit">Enviar por WhatsApp</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="brand brand--footer">
+        <span class="brand__mark">
+          <svg viewBox="0 0 88 88" fill="none"><path d="M18 14v60M18 14h28c13.5 0 24 8.2 24 20.2 0 8.6-5.2 15.4-13.8 18.4 10.6 2.4 17.8 10.2 17.8 21.2 0 13-11.6 20.2-28 20.2H18M46 44.6L74 74" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="brand__text">
+          <strong>Bárbara Ruiz</strong>
+          <small>Diseñadora Gráfica</small>
+        </span>
+      </div>
+      <p>© <span id="year"></span> Bárbara Ruiz. Diseño con carácter.</p>
+    </div>
+  </footer>
+
+  <!-- Cambia data-phone por el número real, con código de país y sin signos. -->
+  <a class="wa-float" id="whatsappBtn" href="https://wa.me/34652953198?text=Hola%20B%C3%A1rbara%2C%20quiero%20hablar%20de%20un%20proyecto%20de%20dise%C3%B1o." target="_blank" rel="noopener" data-phone="34652953198" aria-label="Contactar por WhatsApp">
+    <span class="wa-float__pulse"></span>
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M19.11 17.47c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.14 4.54.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/><path fill="currentColor" d="M16.02 3C9.4 3 4.05 8.35 4.05 14.97c0 2.1.55 4.15 1.6 5.96L4 29l8.24-2.16A12.94 12.94 0 0 0 16.02 27c6.62 0 11.97-5.35 11.97-11.97C28 8.35 22.64 3 16.02 3zm0 21.82c-1.9 0-3.76-.5-5.38-1.46l-.39-.23-4.89 1.28 1.3-4.76-.25-.4a9.8 9.8 0 0 1-1.5-5.28c0-5.42 4.41-9.83 9.83-9.83 5.42 0 9.83 4.41 9.83 9.83.01 5.43-4.4 9.85-9.55 9.85z"/></svg>
+    <span class="wa-float__label">WhatsApp</span>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
