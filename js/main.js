@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = document.getElementById("whatsappBtn")?.dataset.phone || "34652953198";
+const WHATSAPP_NUMBER = document.getElementById("whatsappBtn")?.dataset.phone || "34602803747";
 
 const preloader = document.getElementById("preloader");
 const header = document.getElementById("header");
@@ -23,21 +23,21 @@ function scrollToEl(el) {
   }
 }
 
+function hidePreloader() {
+  const el = document.getElementById("preloader");
+  if (!el) return;
+  el.classList.add("is-done");
+  setTimeout(() => el.remove(), 800);
+}
+
 window.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("is-ready");
   const start = () => {
-    preloader?.classList.add("is-done");
-    if (window.gsap && !reduceMotion) {
-      gsap.to(preloader, {
-        yPercent: -100,
-        duration: 0.85,
-        ease: "power4.inOut",
-        onComplete: () => preloader?.remove(),
-      });
-      intro();
-    } else {
-      preloader?.remove();
+    hidePreloader();
+    try {
       if (window.gsap) intro();
+    } catch (err) {
+      console.warn(err);
     }
     const hashEl = location.hash ? document.querySelector(location.hash) : null;
     if (hashEl) setTimeout(() => scrollToEl(hashEl), 200);
@@ -62,8 +62,7 @@ function intro() {
   });
 
   const tl = gsap.timeline();
-  tl.from(".header", { y: -30, opacity: 0, duration: 0.8, ease: "power3.out" })
-    .from(".hero__title .line span span", {
+  tl.from(".hero__title .line span span", {
       yPercent: 120,
       duration: 1,
       stagger: 0.018,
@@ -82,7 +81,7 @@ if (window.gsap && window.ScrollTrigger && !reduceMotion) {
   gsap.registerPlugin(ScrollTrigger);
   document.body.classList.add("has-anim");
 
-  gsap.utils.toArray(".reveal, .section-title, .section-lead, .svc, .leaf-card, .pill").forEach((el) => {
+  gsap.utils.toArray(".reveal, .section-title, .section-lead, .offer-card, .leaf-card, .pill, .why__item, .quote-card").forEach((el) => {
     gsap.from(el, {
       y: 36,
       duration: 0.85,
@@ -122,12 +121,8 @@ if (window.Lenis && !reduceMotion) {
   });
 }
 
-let lastY = 0;
 window.addEventListener("scroll", () => {
-  const y = window.scrollY;
-  header?.classList.toggle("is-scrolled", y > 12);
-  header?.classList.toggle("is-hidden", y > lastY && y > 160 && !document.body.classList.contains("menu-open"));
-  lastY = y;
+  header?.classList.toggle("is-scrolled", window.scrollY > 12);
 }, { passive: true });
 
 function toggleMenu(open) {
@@ -237,6 +232,13 @@ document.getElementById("contactForm")?.addEventListener("submit", (e) => {
   const type = data.get("type");
   const message = data.get("message");
   const text = `Hola Bárbara, soy ${name}. Necesito: ${type}. ${message}`;
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+});
+
+document.getElementById("ctaLead")?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const email = new FormData(e.currentTarget).get("email");
+  const text = `Hola Bárbara, quiero empezar un proyecto. Mi correo es ${email}.`;
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
 });
 
