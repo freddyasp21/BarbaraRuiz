@@ -68,11 +68,11 @@ function intro() {
       stagger: 0.018,
       ease: "power4.out",
     }, "-=0.4")
-    .from(".hero__sub, .hero__actions, .eyebrow", {
-      y: 24,
+    .from(".hero__status-pill, .eyebrow, .hero__sub, .hero__actions, .hero__stats", {
+      y: 18,
       opacity: 0,
       duration: 0.8,
-      stagger: 0.08,
+      stagger: 0.06,
       ease: "power3.out",
     }, "-=0.6");
 }
@@ -81,7 +81,7 @@ if (window.gsap && window.ScrollTrigger && !reduceMotion) {
   gsap.registerPlugin(ScrollTrigger);
   document.body.classList.add("has-anim");
 
-  gsap.utils.toArray(".reveal, .section-title, .section-lead, .offer-card, .leaf-card, .pill, .why__item, .quote-card").forEach((el) => {
+  gsap.utils.toArray(".reveal, .section-title, .section-lead, .offer-card, .leaf-card, .pill, .why__item, .quote-card, .promo-banner, .pack-card, .process-step, .faq-item").forEach((el) => {
     gsap.from(el, {
       y: 36,
       duration: 0.85,
@@ -95,11 +95,14 @@ if (window.gsap && window.ScrollTrigger && !reduceMotion) {
     });
   });
 
-  gsap.to(".cta-band__bg", {
-    yPercent: 18,
-    ease: "none",
-    scrollTrigger: { trigger: ".cta-band", start: "top bottom", end: "bottom top", scrub: true },
-  });
+  gsap.fromTo(".cta-band__bg",
+    { yPercent: -8 },
+    {
+      yPercent: 8,
+      ease: "none",
+      scrollTrigger: { trigger: ".cta-band", start: "top bottom", end: "bottom top", scrub: true },
+    }
+  );
 }
 
 if (window.Lenis && !reduceMotion) {
@@ -121,8 +124,20 @@ if (window.Lenis && !reduceMotion) {
   });
 }
 
+function updateAnnouncementHeight() {
+  const bar = document.querySelector(".announcement-bar");
+  if (bar) {
+    const h = bar.offsetHeight;
+    document.documentElement.style.setProperty("--announcement-h", `${h}px`);
+  }
+}
+window.addEventListener("resize", updateAnnouncementHeight, { passive: true });
+updateAnnouncementHeight();
+
 window.addEventListener("scroll", () => {
-  header?.classList.toggle("is-scrolled", window.scrollY > 12);
+  const bar = document.querySelector(".announcement-bar");
+  const threshold = bar ? Math.max(10, bar.offsetHeight - 6) : 12;
+  header?.classList.toggle("is-scrolled", window.scrollY > threshold);
 }, { passive: true });
 
 function toggleMenu(open) {
@@ -209,6 +224,7 @@ function initProjectCarousel() {
     scrollStart = track.scrollLeft;
     track.classList.add("is-dragging");
     track.setPointerCapture(e.pointerId);
+    stopAutoPlay();
   });
   track.addEventListener("pointermove", (e) => {
     if (!isDown) return;
@@ -218,12 +234,51 @@ function initProjectCarousel() {
     isDown = false;
     track.classList.remove("is-dragging");
     wrap();
+    startAutoPlay();
   };
   track.addEventListener("pointerup", stopDrag);
   track.addEventListener("pointercancel", stopDrag);
+
+  // Auto-desplazamiento infinito continuo y fluido
+  let autoPlayTimer;
+  function startAutoPlay() {
+    stopAutoPlay();
+    if (reduceMotion) return;
+    autoPlayTimer = setInterval(() => {
+      if (!isDown) {
+        track.scrollBy({ left: step(), behavior: "smooth" });
+      }
+    }, 3800);
+  }
+  function stopAutoPlay() {
+    if (autoPlayTimer) clearInterval(autoPlayTimer);
+  }
+
+  track.addEventListener("mouseenter", stopAutoPlay);
+  track.addEventListener("mouseleave", startAutoPlay);
+  startAutoPlay();
 }
 
 initProjectCarousel();
+
+// FAQ Accordion
+document.querySelectorAll(".faq-question").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const item = btn.closest(".faq-item");
+    const isActive = item.classList.contains("is-active");
+    document.querySelectorAll(".faq-item").forEach((el) => el.classList.remove("is-active"));
+    if (!isActive) item.classList.add("is-active");
+  });
+});
+
+// Manejador genérico para enlaces con mensaje personalizado a WhatsApp
+document.querySelectorAll("[data-wa-message]").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const msg = btn.getAttribute("data-wa-message");
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
+  });
+});
 
 document.getElementById("contactForm")?.addEventListener("submit", (e) => {
   e.preventDefault();

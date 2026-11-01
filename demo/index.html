@@ -1,0 +1,4200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bárbara Ruiz · Diseñadora Gráfica</title>
+  <meta name="description" content="Diseño gráfico con carácter: identidad visual, publicidad, redes sociales y material POP. Bárbara Ruiz convierte marcas en sistemas que se recuerdan y se eligen." />
+  <meta name="theme-color" content="#4C1A58" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --purple: #4c1a58;
+  --purple-deep: #2e0f36;
+  --magenta: #c22f77;
+  --magenta-dark: #7a2e72;
+  --coral: #e15a45;
+  --gold: #f2e4a7;
+  --lime: #ced67b;
+  --ink: #161218;
+  --muted: #6b6570;
+  --paper: #fbf8f4;
+  --white: #ffffff;
+  --line: rgba(76, 26, 88, 0.14);
+  --shadow: 0 18px 50px rgba(76, 26, 88, 0.12);
+  --radius-leaf: 0 72px 0 72px;
+  --header: 88px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+body {
+  font-family: "Montserrat", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button,
+.btn {
+  cursor: pointer;
+}
+
+.container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  opacity: 0.09;
+  background-image: url("assets/img/grain.png");
+  background-size: 220px;
+  mix-blend-mode: multiply;
+}
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: var(--purple-deep);
+  color: #fff;
+  display: grid;
+  place-items: center;
+}
+
+.preloader__inner {
+  text-align: center;
+}
+
+.preloader__logo {
+  width: 72px;
+  margin: 0 auto 16px;
+}
+
+.preloader__path {
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
+  animation: draw 1.1s var(--ease) forwards;
+}
+
+.preloader p {
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.preloader.is-done {
+  pointer-events: none;
+  transform: translateY(-100%);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  height: var(--header);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid transparent;
+  transition: background 0.35s, border-color 0.35s, transform 0.4s var(--ease);
+}
+
+.header.is-scrolled {
+  border-bottom-color: var(--line);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand__mark {
+  width: 36px;
+  color: var(--purple);
+}
+
+.brand__text strong {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.brand__text small {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav a {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 1px;
+  background: var(--purple);
+  transition: width 0.35s var(--ease);
+}
+
+.nav a:hover {
+  color: var(--purple);
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.nav__cta {
+  color: var(--white) !important;
+  background: var(--purple);
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 500 !important;
+}
+
+.nav__cta::after {
+  display: none;
+}
+
+.menu-btn {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  background: transparent;
+  position: relative;
+}
+
+.menu-btn span {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  height: 1.5px;
+  background: var(--purple);
+  transition: 0.3s;
+}
+
+.menu-btn span:nth-child(1) {
+  top: 14px;
+}
+.menu-btn span:nth-child(2) {
+  top: 20px;
+}
+.menu-btn span:nth-child(3) {
+  top: 26px;
+}
+
+.menu-btn.is-open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.menu-btn.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-btn.is-open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--purple-deep);
+  color: #fff;
+  z-index: 85;
+  display: grid;
+  place-items: center;
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 0.7s var(--ease);
+}
+
+.menu-overlay.is-open {
+  clip-path: inset(0 0 0 0);
+}
+
+.menu-overlay nav {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: center;
+}
+
+.menu-overlay a {
+  font-size: clamp(32px, 8vw, 56px);
+  font-weight: 700;
+}
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(105deg, var(--magenta-dark) 0%, var(--magenta) 22%, var(--lime) 52%, var(--gold) 68%, var(--coral) 100%);
+  padding: calc(var(--header) + 32px) 24px 44px;
+  box-sizing: border-box;
+}
+
+.hero__fluid {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.hero__video,
+.hero__liquid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__liquid {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.hero.is-liquid .hero__liquid {
+  opacity: 1;
+}
+
+.hero.is-liquid .hero__video {
+  opacity: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 8, 22, 0.06);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero__wave {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.hero__wave--left {
+  width: min(46vw, 520px);
+  left: -4%;
+  bottom: -8%;
+  animation: floaty 8s ease-in-out infinite;
+}
+
+.hero__wave--right {
+  width: min(28vw, 280px);
+  right: 4%;
+  top: 18%;
+  animation: floaty 7s ease-in-out infinite reverse;
+}
+
+@keyframes floaty {
+  50% {
+    transform: translate3d(8px, -12px, 0);
+  }
+}
+
+.hero__content {
+  text-align: center;
+  padding: 0 16px;
+  max-width: 1020px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 10.5px;
+  margin-bottom: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero__title {
+  font-size: clamp(40px, 8.8vw, 112px);
+  line-height: 0.94;
+  font-weight: 800;
+  letter-spacing: -0.038em;
+  text-shadow: 0 10px 40px rgba(22, 18, 24, 0.28);
+  margin: 0 auto;
+}
+
+.hero__title .line {
+  display: block;
+  overflow: hidden;
+}
+
+.hero__sub {
+  margin: 18px auto 0;
+  max-width: 560px;
+  font-weight: 400;
+  font-size: clamp(14px, 1.25vw, 16.5px);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.hero__actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.hero__actions .btn {
+  min-height: 44px;
+  padding: 0 22px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 26px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: transform 0.35s var(--ease), background 0.35s, color 0.35s, border-color 0.35s;
+}
+
+.btn--ghost {
+  border-color: #fff;
+  color: #fff;
+  background: transparent;
+}
+
+.btn--ghost:hover {
+  background: #fff;
+  color: var(--purple);
+}
+
+.btn--solid {
+  background: var(--purple);
+  color: #fff;
+}
+
+.btn--solid:hover {
+  background: var(--magenta);
+}
+
+.btn--outline {
+  border-color: var(--purple);
+  color: var(--purple);
+  background: transparent;
+}
+
+.btn--outline:hover {
+  background: var(--purple);
+  color: #fff;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.scroll-hint i {
+  width: 1px;
+  height: 42px;
+  background: linear-gradient(#fff, transparent);
+  animation: drip 1.6s infinite;
+}
+
+@keyframes drip {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  51% {
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+.marquee {
+  background: var(--purple);
+  color: #fff;
+  overflow: hidden;
+  border-block: 10px solid var(--purple-deep);
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: ticker 28s linear infinite;
+}
+
+.marquee span {
+  padding: 14px 0;
+  font-size: 13px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.manifesto {
+  padding: 120px 0 80px;
+  background: var(--paper);
+}
+
+.manifesto__kicker {
+  color: var(--magenta);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.manifesto__title {
+  font-size: clamp(28px, 5vw, 58px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--purple);
+}
+
+.reveal-line {
+  display: block;
+}
+
+.about {
+  padding: 40px 0 0;
+  overflow: hidden;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  padding-bottom: 80px;
+}
+
+.section-kicker {
+  color: var(--coral);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.12;
+  color: var(--purple);
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
+}
+
+.section-lead,
+.about__copy p {
+  color: var(--ink);
+  line-height: 1.7;
+  max-width: 54ch;
+}
+
+.about__copy p + p {
+  margin-top: 14px;
+}
+
+.about__copy .btn {
+  margin-top: 28px;
+}
+
+.about__note {
+  margin-top: 16px !important;
+  color: var(--coral) !important;
+  font-size: 14px;
+}
+
+.about__visual {
+  height: 520px;
+  position: relative;
+}
+
+.pill {
+  position: absolute;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.pill img,
+.pill video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pill--gradient {
+  width: 92px;
+  height: 210px;
+  left: 0;
+  top: 150px;
+  background: linear-gradient(var(--gold), var(--coral), var(--magenta), var(--purple));
+}
+
+.pill--photo {
+  width: 170px;
+  height: 470px;
+  left: 108px;
+  top: 20px;
+}
+
+.pill--collage {
+  width: 170px;
+  height: 470px;
+  left: 290px;
+  top: 0;
+  background: var(--purple-deep);
+}
+
+.pill--solid {
+  width: 92px;
+  height: 180px;
+  right: 0;
+  bottom: 40px;
+  background: var(--coral);
+}
+
+.about__bar {
+  height: 18px;
+  background: var(--purple);
+}
+
+.services {
+  padding: 88px 0 100px;
+  background: var(--paper);
+}
+
+.section-head {
+  margin-bottom: 48px;
+  max-width: 720px;
+}
+
+.offer__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.offer-card {
+  --accent: var(--purple);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 24px 22px 26px;
+  background: var(--white);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 0 40px 0 40px;
+  box-shadow: var(--shadow);
+  transition: transform 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.offer-card:nth-child(8n + 1) { --accent: var(--purple); }
+.offer-card:nth-child(8n + 2) { --accent: var(--magenta); }
+.offer-card:nth-child(8n + 3) { --accent: var(--coral); }
+.offer-card:nth-child(8n + 4) { --accent: var(--magenta-dark); }
+.offer-card:nth-child(8n + 5) { --accent: var(--purple); }
+.offer-card:nth-child(8n + 6) { --accent: var(--magenta); }
+.offer-card:nth-child(8n + 7) { --accent: var(--coral); }
+.offer-card:nth-child(8n + 8) { --accent: var(--magenta-dark); }
+
+.offer-card:hover,
+.offer-card:focus-visible {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 22px 50px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+.offer-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.offer-card__num {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+}
+
+.offer-card__icon {
+  width: 48px;
+  height: 48px;
+  margin: 16px 0 18px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, var(--white));
+}
+
+.offer-card__icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.offer-card h3 {
+  font-size: 18px;
+  line-height: 1.25;
+  color: var(--purple);
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+
+.offer-card p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+  margin-top: auto;
+}
+
+.services__more {
+  margin-top: 32px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.services__more a {
+  color: var(--magenta);
+  font-weight: 600;
+  border-bottom: 1px solid color-mix(in srgb, var(--magenta) 40%, transparent);
+}
+
+.services__more a:hover {
+  color: var(--purple);
+  border-bottom-color: var(--purple);
+}
+
+.projects {
+  padding: 80px 0 100px;
+  overflow: hidden;
+}
+
+.projects__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  margin-bottom: 12px;
+}
+
+.projects__head .section-title {
+  margin-bottom: 0;
+}
+
+.projects__lead {
+  margin-bottom: 32px;
+}
+
+.slider-wrap {
+  overflow: hidden;
+}
+
+.slider {
+  --slide-gap: 20px;
+  display: flex;
+  gap: var(--slide-gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 4px 2px 10px;
+  cursor: grab;
+}
+
+.slider.is-dragging {
+  scroll-behavior: auto;
+  cursor: grabbing;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  flex: 0 0 calc((100% - var(--slide-gap) * 3) / 4);
+  min-width: 240px;
+  scroll-snap-align: start;
+  user-select: none;
+}
+
+.pcard {
+  background: var(--purple-deep);
+  color: #fff;
+  border-radius: 22px;
+  padding: 10px 10px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 100%;
+  box-shadow: var(--shadow);
+  transition: transform 0.35s var(--ease);
+}
+
+.pcard:hover {
+  transform: translateY(-4px);
+}
+
+.pcard__media {
+  position: relative;
+  aspect-ratio: 1 / 0.95;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--purple-deep);
+}
+
+.pcard__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+
+.pcard__media--contain {
+  background: #fff;
+}
+
+.pcard__media--contain img {
+  object-fit: contain;
+  padding: 16px;
+}
+
+.pcard:hover .pcard__media img {
+  transform: scale(1.06);
+}
+
+.pcard__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--magenta);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pcard__meta {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 12px;
+  padding: 0 6px;
+}
+
+.pcard__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 0 6px;
+}
+
+.pcard__who {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.pcard__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--magenta);
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.pcard__who h3 {
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pcard__who small {
+  display: block;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 11px;
+}
+
+.pcard__side {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.pcard__side span {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.pcard__side strong {
+  font-size: 13px;
+  color: var(--gold);
+}
+
+.pcard__footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 6px;
+}
+
+.pcard__btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  background: var(--magenta);
+  color: #fff;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.pcard__btn:hover {
+  background: var(--coral);
+}
+
+.pcard__link {
+  font-size: 12px;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.slider-nav {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.nav-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--purple);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.nav-circle:hover {
+  background: var(--purple);
+  color: #fff;
+  border-color: var(--purple);
+}
+
+.leaf,
+.leaf-card {
+  border-radius: var(--radius-leaf);
+}
+
+.why {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(194, 47, 119, 0.22), transparent 46%),
+    var(--purple-deep);
+}
+
+.why::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  opacity: 0.16;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='180' viewBox='0 0 420 180' fill='none'%3E%3Cpath d='M-20 90c70-50 140-50 210 0s140 50 230 0' stroke='%23ffffff' stroke-width='1'/%3E%3Cpath d='M-20 130c70-50 140-50 210 0s140 50 230 0' stroke='%23ffffff' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 420px 180px;
+}
+
+.why__grid {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: stretch;
+  min-height: 640px;
+  position: relative;
+  z-index: 1;
+}
+
+.why__copy {
+  padding: 88px 48px 88px 0;
+}
+
+.why__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--magenta);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.why__tag-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: var(--magenta);
+}
+
+.why__title {
+  font-size: clamp(32px, 4.4vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+}
+
+.why__list {
+  list-style: none;
+}
+
+.why__item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.why__item:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.why__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--magenta);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.why__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.why__item h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.why__item p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 46ch;
+}
+
+.why__visual {
+  position: relative;
+  min-height: 640px;
+}
+
+.why__blob {
+  position: absolute;
+  right: -12%;
+  top: 0;
+  bottom: 0;
+  width: 118%;
+  background: linear-gradient(160deg, var(--magenta) 0%, var(--coral) 100%);
+  border-radius: 48% 0 0 42%;
+}
+
+.why__photo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 28px 28px 0 0;
+  filter: drop-shadow(0 24px 40px rgba(20, 8, 22, 0.35));
+}
+
+.gallery,
+.logo-strip {
+  padding: 40px 0 90px;
+  background: var(--white);
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.logo-strip .section-head {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8px;
+}
+
+.logo-strip__viewport {
+  overflow: hidden;
+  margin-top: 28px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+
+.logo-strip__track {
+  display: flex;
+  width: max-content;
+  animation: logo-ticker 36s linear infinite;
+}
+
+.logo-strip__viewport:hover .logo-strip__track {
+  animation-play-state: paused;
+}
+
+.logo-strip__set {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding: 20px 40px;
+}
+
+.logo-strip__set img {
+  height: 92px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: invert(1) grayscale(1);
+  opacity: 0.62;
+}
+
+@keyframes logo-ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.leaf-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.leaf-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+
+.leaf-card:hover img {
+  transform: scale(1.08);
+}
+
+.leaf-card figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 16px 18px;
+  background: linear-gradient(transparent, rgba(20, 8, 22, 0.78));
+  color: #fff;
+}
+
+.leaf-card figcaption span {
+  display: block;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.leaf-card--cta {
+  display: grid;
+  place-items: center;
+  background: var(--purple);
+  color: #fff;
+  text-align: center;
+  min-height: 280px;
+}
+
+.leaf-card--cta p {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.cta-band {
+  position: relative;
+  min-height: 480px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  overflow: hidden;
+  text-align: center;
+  isolation: isolate;
+  background: linear-gradient(135deg, var(--purple-deep) 0%, #4c1a58 50%, #7a2e72 100%);
+}
+
+.cta-band__bg {
+  position: absolute;
+  top: -25%;
+  bottom: -25%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 150%;
+  background: url("assets/img/degradado.jpg") center/cover no-repeat;
+  z-index: -2;
+  will-change: transform;
+}
+
+.cta-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 18% 22%, rgba(255,255,255,0.08) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 82% 18%, rgba(255,255,255,0.08) 0 1px, transparent 1.5px);
+  background-size: 22px 22px, 22px 22px;
+  opacity: 0.7;
+}
+
+.cta-band::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(46, 15, 54, 0.18), rgba(46, 15, 54, 0.28));
+}
+
+.cta-band__content {
+  padding: 80px 20px;
+  max-width: 720px;
+}
+
+.cta-band__phrase {
+  font-size: clamp(28px, 4.6vw, 48px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+
+.cta-band__sub {
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 300;
+  max-width: 52ch;
+  margin: 0 auto 28px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.cta-band__form {
+  display: flex;
+  width: min(560px, 100%);
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(20, 8, 22, 0.18);
+}
+
+.cta-band__form input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
+  background: #fff;
+  padding: 16px 20px;
+  font-size: 15px;
+  color: var(--ink);
+  text-align: center;
+}
+
+.cta-band__form input:focus {
+  outline: none;
+  box-shadow: none;
+  border: 0;
+}
+
+.cta-band__form input::placeholder {
+  color: #9a94a0;
+  text-align: center;
+}
+
+.cta-band__form button {
+  border: 0;
+  background: var(--magenta);
+  color: #fff;
+  padding: 16px 26px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.cta-band__form button:hover {
+  background: var(--coral);
+}
+
+.cta-band__perks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 22px;
+  list-style: none;
+  margin-top: 22px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.cta-band__perks li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cta-band__perks li::before {
+  content: "✓";
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.quotes {
+  position: relative;
+  padding: 110px 0;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.quotes__grid {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.quotes__title {
+  font-size: clamp(32px, 4.2vw, 48px);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: var(--purple);
+  margin-bottom: 18px;
+}
+
+.quotes__lead {
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 38ch;
+  margin-bottom: 28px;
+}
+
+.quotes__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--purple);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.quotes__cta:hover {
+  background: var(--magenta);
+  color: #fff;
+}
+
+.quotes__stack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.quotes__stack::before {
+  content: "";
+  position: absolute;
+  right: -8%;
+  bottom: -12%;
+  width: 78%;
+  height: 72%;
+  background: radial-gradient(circle at 40% 40%, rgba(194, 47, 119, 0.22), rgba(242, 228, 167, 0.35) 55%, transparent 70%);
+  border-radius: 58% 42% 48% 52%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.quote-card {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px 22px 20px;
+  box-shadow: 0 14px 40px rgba(76, 26, 88, 0.1);
+}
+
+.quote-card__mark {
+  display: block;
+  color: var(--magenta);
+  font-size: 42px;
+  line-height: 0.7;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.quote-card p {
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.quote-card__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.quote-card__foot strong {
+  display: block;
+  color: var(--purple);
+  font-size: 14px;
+}
+
+.quote-card__foot div span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.quote-card__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--magenta);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.quote-card__avatar--gold {
+  background: var(--purple);
+}
+
+.quote-card__avatar--coral {
+  background: var(--coral);
+}
+
+.contact {
+  padding: 110px 0;
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.contact__points {
+  margin-top: 28px;
+  list-style: none;
+}
+
+.contact__points li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--purple);
+  font-weight: 600;
+}
+
+.contact__form {
+  display: grid;
+  gap: 16px;
+}
+
+.contact__form label {
+  display: grid;
+  gap: 8px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.contact__form input,
+.contact__form select,
+.contact__form textarea {
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+  font-size: 16px;
+  color: var(--ink);
+  background: transparent;
+  outline: none;
+}
+
+.contact__form input:focus,
+.contact__form select:focus,
+.contact__form textarea:focus {
+  border-bottom-color: var(--purple);
+}
+
+.footer {
+  background: var(--purple-deep);
+  color: #fff;
+  border-top: 0;
+  padding: 36px 0;
+}
+
+.footer .brand__mark {
+  color: var(--gold);
+}
+
+.footer .brand__text small {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+}
+
+.wa-float {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 120;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+  cursor: pointer;
+}
+
+.wa-float svg {
+  width: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.wa-float__pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #25d366;
+  animation: pulse 2s infinite;
+}
+
+.wa-float__label {
+  position: absolute;
+  right: 74px;
+  background: var(--purple);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: 0.3s var(--ease);
+}
+
+.wa-float:hover .wa-float__label,
+.wa-float:focus-visible .wa-float__label {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes pulse {
+  70% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1180px) {
+  .nav {
+    gap: 16px;
+  }
+  .nav a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1060px) {
+  .nav {
+    display: none;
+  }
+  .menu-btn {
+    display: block;
+  }
+  .about__grid,
+  .contact__grid,
+  .why__grid,
+  .quotes__grid {
+    grid-template-columns: 1fr;
+  }
+  .offer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about__visual {
+    height: 420px;
+    max-width: 520px;
+  }
+  .hero__actions .btn--solid {
+    background: var(--white);
+    color: var(--purple);
+  }
+  .slide {
+    flex-basis: calc((100% - var(--slide-gap)) / 2);
+  }
+  .why__grid {
+    width: min(1180px, calc(100% - 32px));
+    min-height: 0;
+  }
+  .why__copy {
+    padding: 64px 0 24px;
+  }
+  .why__visual {
+    min-height: 460px;
+  }
+  .why__blob {
+    width: 100%;
+    right: 0;
+    border-radius: 36px 36px 0 0;
+  }
+  .why__photo {
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 320px;
+    height: 100%;
+  }
+}
+
+@media (max-width: 680px) {
+  :root {
+    --header: 72px;
+    --radius-leaf: 0 42px 0 42px;
+  }
+  .container {
+    width: min(1180px, calc(100% - 28px));
+  }
+  .header {
+    padding: 0 16px;
+  }
+  .slide {
+    flex-basis: 84%;
+    min-width: 0;
+  }
+  .logo-strip__set {
+    gap: 48px;
+    padding: 12px 24px;
+  }
+  .logo-strip__set img {
+    height: 68px;
+    max-width: 140px;
+  }
+  .projects__head {
+    align-items: center;
+  }
+  .cta-band__form {
+    flex-direction: column;
+    background: transparent;
+    box-shadow: none;
+    gap: 10px;
+  }
+  .cta-band__form input,
+  .cta-band__form button {
+    width: 100%;
+    border-radius: 12px;
+  }
+  .cta-band__form input {
+    min-height: 52px;
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    text-align: center;
+  }
+  .cta-band__perks {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero__content {
+    padding: 0 16px;
+  }
+  .hero__actions {
+    flex-direction: column;
+    width: min(280px, 100%);
+    margin-inline: auto;
+  }
+  .hero__actions .btn {
+    width: 100%;
+  }
+  .offer-card {
+    border-radius: 0 28px 0 28px;
+    padding: 20px 18px 22px;
+  }
+  .about__visual {
+    height: 380px;
+    transform: scale(0.86);
+    transform-origin: left center;
+  }
+  .footer__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .quotes {
+    padding: 72px 0;
+  }
+  .quotes__grid {
+    gap: 36px;
+  }
+  .wa-float {
+    width: 58px;
+    height: 58px;
+    right: 14px;
+    bottom: 14px;
+  }
+}
+
+/* ==========================================================================
+   ESTANDARIZACIÓN UI/UX SOPHISTICATED DESIGN SYSTEM & SECCIONES NUEVAS
+   ========================================================================== */
+
+/* Barra de Anuncio Superior / Banner Notificación */
+.announcement-bar {
+  position: relative;
+  z-index: 100;
+  background: linear-gradient(90deg, #2e0f36 0%, #4c1a58 35%, #7a2e72 70%, #2e0f36 100%);
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(242, 228, 167, 0.22);
+}
+
+.announcement-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.announcement-bar__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(242, 228, 167, 0.18);
+  border: 1px solid rgba(242, 228, 167, 0.45);
+  color: var(--gold);
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.announcement-bar__text {
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.01em;
+}
+
+.announcement-bar__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gold);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.announcement-bar__cta:hover {
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+/* Modificación de Header para acomodar announcement-bar y fijar al top en scroll */
+:root {
+  --announcement-h: 41px;
+}
+
+body.has-announcement .header {
+  top: var(--announcement-h, 41px);
+  transition: top 0.25s var(--ease), background 0.35s, border-color 0.35s, box-shadow 0.35s;
+}
+
+body.has-announcement .header.is-scrolled {
+  top: 0 !important;
+  box-shadow: 0 4px 25px rgba(46, 15, 54, 0.1);
+}
+
+@media (max-width: 680px) {
+  body.has-announcement .header {
+    top: var(--announcement-h, 56px);
+  }
+  body.has-announcement .header.is-scrolled {
+    top: 0 !important;
+  }
+}
+
+/* WhatsApp Icon & Action Buttons */
+.btn--whatsapp {
+  background: #25d366;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+  gap: 10px;
+  font-weight: 600;
+  border-radius: 999px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--whatsapp:hover {
+  background: #20bd5a;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
+}
+
+.btn--whatsapp svg,
+.btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.btn--pill {
+  border-radius: 999px;
+}
+
+.btn--gold {
+  background: var(--gold);
+  color: var(--purple-deep);
+  border: 1px solid rgba(76, 26, 88, 0.15);
+  font-weight: 700;
+}
+
+.btn--gold:hover {
+  background: var(--coral);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Hero Badge & Social Proof Stats */
+.hero__status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 13px;
+  border-radius: 999px;
+  background: rgba(46, 15, 54, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.hero__status-dot {
+  width: 6.5px;
+  height: 6.5px;
+  border-radius: 50%;
+  background: #25d366;
+  box-shadow: 0 0 8px #25d366;
+  animation: pulse-dot 1.8s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 560px;
+  margin: 24px auto 0;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: rgba(46, 15, 54, 0.32);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 8px 24px rgba(20, 8, 22, 0.16);
+}
+
+.hero__stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero__stat-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.hero__stat-num {
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.hero__stat-label {
+  font-size: 9.5px;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* Banners Publicitarios de Alto Impacto */
+.promo-banner {
+  margin: 70px 0;
+  border-radius: 28px;
+  background: linear-gradient(135deg, var(--purple-deep) 0%, #4c1a58 45%, #7a2e72 100%);
+  color: #ffffff;
+  padding: 56px 48px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(46, 15, 54, 0.28);
+  border: 1px solid rgba(242, 228, 167, 0.18);
+  isolation: isolate;
+}
+
+.promo-banner::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(194, 47, 119, 0.38) 0%, rgba(225, 90, 69, 0.2) 50%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.promo-banner::after {
+  content: "";
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(206, 214, 123, 0.18) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.promo-banner__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.promo-banner__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(242, 228, 167, 0.16);
+  border: 1px solid rgba(242, 228, 167, 0.35);
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.promo-banner__title {
+  font-size: clamp(28px, 3.8vw, 42px);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.promo-banner__title span {
+  color: var(--gold);
+}
+
+.promo-banner__desc {
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 28px;
+  max-width: 52ch;
+  font-weight: 300;
+}
+
+.promo-banner__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.promo-banner__visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.promo-banner__card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  padding: 26px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+.promo-banner__card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.promo-banner__card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--magenta);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 800;
+}
+
+.promo-banner__card-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.promo-banner__card-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.promo-banner__card-list li::before {
+  content: "✦";
+  color: var(--gold);
+  font-size: 12px;
+}
+
+/* Mejoras en Ofertas y Servicios UI/UX */
+.offer-card__deliverables {
+  list-style: none;
+  margin: 18px 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--ink);
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+}
+
+.offer-card__deliverables li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.offer-card__deliverables li svg {
+  width: 14px;
+  height: 14px;
+  color: var(--magenta);
+  flex-shrink: 0;
+}
+
+.offer-card__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent) 8%, var(--white));
+  color: var(--purple-deep);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: all 0.25s var(--ease);
+}
+
+.offer-card__action svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.25s var(--ease);
+}
+
+.offer-card:hover .offer-card__action {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.offer-card:hover .offer-card__action svg {
+  transform: translateX(4px);
+}
+
+/* Sección de Paquetes / Planes Publicitarios */
+.packs {
+  padding: 90px 0 100px;
+  background: var(--white);
+  position: relative;
+}
+
+.packs__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+  margin-top: 48px;
+}
+
+.pack-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 38px 30px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+}
+
+.pack-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 55px rgba(76, 26, 88, 0.14);
+}
+
+.pack-card--featured {
+  background: #ffffff;
+  border: 2px solid var(--magenta);
+  box-shadow: 0 20px 50px rgba(194, 47, 119, 0.18);
+  transform: scale(1.03);
+  z-index: 2;
+}
+
+.pack-card--featured:hover {
+  transform: scale(1.03) translateY(-8px);
+}
+
+.pack-card__popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--magenta), var(--coral));
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  box-shadow: 0 6px 16px rgba(194, 47, 119, 0.35);
+  white-space: nowrap;
+}
+
+.pack-card__tag {
+  color: var(--magenta);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.pack-card__name {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--purple-deep);
+  margin-bottom: 12px;
+}
+
+.pack-card__desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.pack-card__features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.pack-card__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.pack-card__features li svg {
+  width: 16px;
+  height: 16px;
+  color: #25d366;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pack-card .btn {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* Proceso de Trabajo UI/UX Sofisticado */
+.process {
+  padding: 96px 0 106px;
+  background: var(--paper);
+  position: relative;
+  overflow: hidden;
+}
+
+.process__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+  position: relative;
+}
+
+.process-step {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 32px 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 30px rgba(76, 26, 88, 0.06);
+  transition: transform 0.35s var(--ease), border-color 0.35s var(--ease);
+}
+
+.process-step:hover {
+  transform: translateY(-6px);
+  border-color: var(--purple);
+}
+
+.process-step__number {
+  font-size: 38px;
+  font-weight: 800;
+  color: color-mix(in srgb, var(--purple) 18%, transparent);
+  line-height: 1;
+  margin-bottom: 14px;
+  letter-spacing: -0.04em;
+}
+
+.process-step h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--purple-deep);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.process-step p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.process-step__badge {
+  display: inline-block;
+  margin-top: auto;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--purple);
+  width: fit-content;
+}
+
+/* Herramientas & Calidad Técnica Marquee */
+.tools-ticker {
+  background: var(--purple-deep);
+  color: #ffffff;
+  padding: 16px 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tools-ticker__track {
+  display: flex;
+  width: max-content;
+  animation: ticker 32s linear infinite reverse;
+}
+
+.tools-ticker span {
+  padding: 6px 36px;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.tools-ticker span::after {
+  content: "✦";
+  color: var(--gold);
+  font-size: 10px;
+}
+
+/* Preguntas Frecuentes (FAQ) Acordeón UI/UX */
+.faq {
+  padding: 96px 0 106px;
+  background: var(--white);
+}
+
+.faq__container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.faq__list {
+  margin-top: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--paper);
+  overflow: hidden;
+  transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.faq-item.is-active {
+  border-color: var(--purple);
+  box-shadow: 0 12px 30px rgba(76, 26, 88, 0.08);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border: 0;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--purple-deep);
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(76, 26, 88, 0.08);
+  color: var(--purple);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  font-size: 18px;
+  font-weight: 600;
+  transition: transform 0.3s var(--ease), background 0.3s;
+}
+
+.faq-item.is-active .faq-icon {
+  transform: rotate(45deg);
+  background: var(--purple);
+  color: #ffffff;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease), padding 0.3s var(--ease);
+}
+
+.faq-item.is-active .faq-answer {
+  max-height: 300px;
+}
+
+.faq-answer__inner {
+  padding: 0 26px 24px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.faq__cta {
+  margin-top: 36px;
+  text-align: center;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.faq__cta a {
+  color: var(--magenta);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Calificación con Estrellas en Testimonios */
+.stars-row {
+  display: flex;
+  gap: 4px;
+  color: #ffb800;
+  margin-bottom: 12px;
+}
+
+.stars-row svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* Tooltip mejorado para el botón flotante de WhatsApp */
+.wa-float__tooltip {
+  position: absolute;
+  right: 76px;
+  bottom: 8px;
+  background: #ffffff;
+  color: var(--ink);
+  padding: 10px 16px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+  opacity: 0.95;
+  border: 1px solid var(--line);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.wa-float__tooltip-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #25d366;
+  box-shadow: 0 0 6px #25d366;
+}
+
+/* Responsive adjustments */
+@media (max-width: 980px) {
+  .promo-banner {
+    padding: 40px 28px;
+  }
+  .promo-banner__grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .packs__grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pack-card--featured {
+    transform: none;
+  }
+  .pack-card--featured:hover {
+    transform: translateY(-8px);
+  }
+  .process__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .hero {
+    padding: calc(var(--header) + 20px) 16px 32px;
+  }
+  .hero__title {
+    font-size: clamp(34px, 10vw, 54px);
+    line-height: 0.98;
+  }
+  .hero__stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 14px;
+    margin-top: 20px;
+    max-width: 100%;
+  }
+  .hero__stat-item:not(:last-child)::after {
+    right: -4px;
+  }
+  .hero__stat-num {
+    font-size: 14px;
+  }
+  .hero__stat-label {
+    font-size: 8px;
+    letter-spacing: 0.02em;
+  }
+  .process__grid {
+    grid-template-columns: 1fr;
+  }
+  .promo-banner__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .promo-banner__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .wa-float__tooltip {
+    display: none;
+  }
+  .faq {
+    padding: 64px 0 74px;
+  }
+  .faq-question {
+    padding: 18px 16px;
+    font-size: 15px;
+    gap: 12px;
+  }
+  .faq-answer__inner {
+    padding: 0 16px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 520px) {
+  .offer__grid {
+    grid-template-columns: 1fr;
+  }
+  .about__visual {
+    transform: scale(0.78);
+  }
+}
+
+@media (max-width: 480px) {
+  .announcement-bar {
+    padding: 8px 14px;
+    font-size: 11px;
+  }
+  .announcement-bar__inner {
+    gap: 8px;
+  }
+  .announcement-bar__tag {
+    font-size: 9px;
+    padding: 2px 8px;
+  }
+  .promo-banner {
+    padding: 32px 18px;
+    margin: 40px 0;
+    border-radius: 20px;
+  }
+  .promo-banner__title {
+    font-size: 24px;
+  }
+  .promo-banner__card {
+    padding: 18px 14px;
+  }
+  .pack-card {
+    padding: 28px 20px;
+    border-radius: 18px;
+  }
+  .pack-card__name {
+    font-size: 20px;
+  }
+  .quote-card {
+    padding: 18px 16px;
+  }
+  .tools-ticker span {
+    padding: 4px 18px;
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .hero__liquid {
+    display: none;
+  }
+}
+
+</style>
+</head>
+<body class="has-announcement">
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Barra Publicitaria Superior / Anuncio Promocional -->
+  <aside class="announcement-bar" role="complementary" aria-label="Aviso promocional">
+    <div class="container announcement-bar__inner">
+      <span class="announcement-bar__tag">⚡ Cupos Noviembre 2026</span>
+      <span class="announcement-bar__text">20% OFF en Identidad de Marca Completa + Manual de Estilo + Kit de Redes</span>
+      <a href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20aprovechar%20la%20oferta%20del%2020%25%20OFF%20en%20Identidad%20de%20Marca." class="announcement-bar__cta" target="_blank" rel="noopener">
+        Aprovechar oferta por WhatsApp &rarr;
+      </a>
+    </div>
+  </aside>
+
+  <div class="preloader" id="preloader">
+    <div class="preloader__inner">
+      <svg class="preloader__logo" viewBox="0 0 88 88" fill="none">
+        <path class="preloader__path" d="M18 14v60M18 14h28c13.5 0 24 8.2 24 20.2 0 8.6-5.2 15.4-13.8 18.4 10.6 2.4 17.8 10.2 17.8 21.2 0 13-11.6 20.2-28 20.2H18M46 44.6L74 74" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p>Bárbara Ruiz</p>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <a class="brand" href="#inicio">
+      <span class="brand__mark">
+        <svg viewBox="0 0 88 88" fill="none"><path d="M18 14v60M18 14h28c13.5 0 24 8.2 24 20.2 0 8.6-5.2 15.4-13.8 18.4 10.6 2.4 17.8 10.2 17.8 21.2 0 13-11.6 20.2-28 20.2H18M46 44.6L74 74" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="brand__text">
+        <strong>Bárbara Ruiz</strong>
+        <small>Diseño Gráfico &amp; Branding</small>
+      </span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#proyectos">Portafolio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#paquetes">Packs &amp; Planes</a>
+      <a href="#metodologia">Metodología</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay">
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#proyectos">Portafolio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#paquetes">Packs &amp; Precios</a>
+      <a href="#metodologia">Metodología</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#faq">Preguntas Frecuentes</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero__fluid" aria-hidden="true">
+        <img class="hero__video" src="assets/img/degradado.jpg" alt="" />
+        <canvas class="hero__liquid" id="heroLiquid"></canvas>
+      </div>
+      <svg class="hero__wave hero__wave--left" viewBox="0 0 600 800" fill="none" aria-hidden="true">
+        <path d="M-20 720 C 80 620, 40 480, 160 400 S 220 220, 80 40" stroke="white" stroke-width="1.6"/>
+      </svg>
+      <svg class="hero__wave hero__wave--right" viewBox="0 0 400 320" fill="none" aria-hidden="true">
+        <path d="M40 20 C 180 40, 220 140, 380 90" stroke="white" stroke-width="1.6"/>
+      </svg>
+      <div class="hero__content">
+        <div class="hero__status-pill">
+          <span class="hero__status-dot"></span>
+          <span>Disponible para proyectos · Respuesta en &lt; 1 hora</span>
+        </div>
+        <p class="eyebrow">Diseño gráfico estratégico · Marca personal &amp; Comercial</p>
+        <h1 class="hero__title">
+          <span class="line">Diseño que se</span>
+          <span class="line">recuerda y vende</span>
+        </h1>
+        <p class="hero__sub">Identidad visual de alto nivel, packaging y piezas publicitarias que transforman tu negocio en una marca referente, profesional y difícil de ignorar.</p>
+        
+        <div class="hero__actions">
+          <a class="btn btn--whatsapp btn--pill" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20empezar%20un%20proyecto%20de%20dise%C3%B1o%20gr%C3%A1fico." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c0-5.445 4.43-9.875 9.877-9.875 2.64 0 5.122 1.03 6.987 2.898a9.825 9.825 0 012.89 6.978c-.002 5.446-4.431 9.876-9.874 9.876m8.397-18.271A11.782 11.782 0 0012.047 0C5.405 0 .007 5.397.007 12.04c0 2.122.553 4.195 1.604 6.017L0 24l6.103-1.601a11.83 11.83 0 005.94 1.59h.005c6.64 0 12.037-5.397 12.037-12.04 0-3.217-1.253-6.241-3.527-8.512"/></svg>
+            <span>Cotizar por WhatsApp</span>
+          </a>
+          <a class="btn btn--ghost btn--pill" href="#proyectos">Explorar Portafolio</a>
+        </div>
+
+        <!-- Social Proof Stats Bar -->
+        <div class="hero__stats">
+          <div class="hero__stat-item">
+            <span class="hero__stat-num">+50</span>
+            <span class="hero__stat-label">Marcas creadas</span>
+          </div>
+          <div class="hero__stat-item">
+            <span class="hero__stat-num">100%</span>
+            <span class="hero__stat-label">Archivos listos imprenta</span>
+          </div>
+          <div class="hero__stat-item">
+            <span class="hero__stat-num">5.0 ★</span>
+            <span class="hero__stat-label">Satisfacción garantizada</span>
+          </div>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#manifiesto">
+        <span>Scroll</span>
+        <i></i>
+      </a>
+    </section>
+
+    <!-- Slider Infinito de Disciplinas / Especialidades -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Identidad Visual ✦ Branding Estratégico ✦ Publicidad Digital &amp; Impresa ✦ Redes Sociales ✦ Material POP &amp; Merch ✦ Packaging Premium ✦ Diseño Editorial ✦ Dirección de Arte ✦ Vectorización ✦ Identidad Visual ✦ Branding Estratégico ✦ Publicidad Digital &amp; Impresa ✦ Redes Sociales ✦ Material POP &amp; Merch ✦ Packaging Premium ✦ Diseño Editorial ✦ Dirección de Arte ✦ Vectorización ✦</span>
+        <span>Identidad Visual ✦ Branding Estratégico ✦ Publicidad Digital &amp; Impresa ✦ Redes Sociales ✦ Material POP &amp; Merch ✦ Packaging Premium ✦ Diseño Editorial ✦ Dirección de Arte ✦ Vectorización ✦ Identidad Visual ✦ Branding Estratégico ✦ Publicidad Digital &amp; Impresa ✦ Redes Sociales ✦ Material POP &amp; Merch ✦ Packaging Premium ✦ Diseño Editorial ✦ Dirección de Arte ✦ Vectorización ✦</span>
+      </div>
+    </div>
+
+    <section class="manifesto" id="manifiesto">
+      <div class="container">
+        <p class="manifesto__kicker reveal">No diseño para decorar.</p>
+        <h2 class="manifesto__title">
+          <span class="reveal-line">Diseño para que te elijan:</span>
+          <span class="reveal-line">con una marca nítida, piezas que venden</span>
+          <span class="reveal-line">y un estilo que no se diluye.</span>
+        </h2>
+      </div>
+    </section>
+
+    <!-- BANNER PUBLICITARIO 1: Auditoría Visual Express (Alto Impacto) -->
+    <section class="container" aria-label="Banner de promoción especial">
+      <div class="promo-banner reveal">
+        <div class="promo-banner__grid">
+          <div>
+            <span class="promo-banner__badge">✦ Diagnóstico Inicial sin Costo</span>
+            <h2 class="promo-banner__title">¿Tu imagen actual <span>no refleja el verdadero valor</span> de tu negocio?</h2>
+            <p class="promo-banner__desc">Agenda una <strong>Auditoría Visual Express de 15 minutos</strong> sin ningún compromiso por WhatsApp. Analizamos tu logotipo, coherencia en redes y te decimos con honestidad qué ajustar para elevar tus ventas.</p>
+            <div class="promo-banner__actions">
+              <a href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20solicitar%20la%20Auditor%C3%ADa%20Visual%20Express%20gratuita%20para%20mi%20marca." target="_blank" rel="noopener" class="btn btn--whatsapp btn--pill">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c0-5.445 4.43-9.875 9.877-9.875 2.64 0 5.122 1.03 6.987 2.898a9.825 9.825 0 012.89 6.978c-.002 5.446-4.431 9.876-9.874 9.876m8.397-18.271A11.782 11.782 0 0012.047 0C5.405 0 .007 5.397.007 12.04c0 2.122.553 4.195 1.604 6.017L0 24l6.103-1.601a11.83 11.83 0 005.94 1.59h.005c6.64 0 12.037-5.397 12.037-12.04 0-3.217-1.253-6.241-3.527-8.512"/></svg>
+                <span>Solicitar Auditoría por WhatsApp</span>
+              </a>
+              <a href="#proyectos" class="btn btn--ghost btn--pill">Ver Casos de Éxito</a>
+            </div>
+          </div>
+          <div class="promo-banner__visual">
+            <div class="promo-banner__card">
+              <div class="promo-banner__card-header">
+                <div class="promo-banner__card-icon">BR</div>
+                <div>
+                  <strong style="display:block; font-size:14px; color:#fff;">Diagnóstico Express</strong>
+                  <small style="color:var(--gold); font-size:11px;">100% Personalizado</small>
+                </div>
+              </div>
+              <ul class="promo-banner__card-list">
+                <li>Revisión de coherencia visual y logo</li>
+                <li>Análisis de paleta cromática &amp; tipografía</li>
+                <li>Evaluación de impacto frente a competidores</li>
+                <li>Recomendaciones directas y aplicables</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS PROFESIONALES ESTANDARIZADOS -->
+    <section class="services" id="servicios">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker reveal">Especialidades &amp; Servicios</p>
+          <h2 class="section-title reveal">Soluciones de diseño gráfico orientadas a resultados.</h2>
+          <p class="section-lead reveal">No entrego archivos sueltos. Construyo un sistema gráfico coherente y profesional que se reconoce en cada punto de contacto con tu cliente.</p>
+        </div>
+
+        <div class="offer__grid">
+          <!-- 01 Identidad Visual -->
+          <article class="offer-card reveal">
+            <span class="offer-card__num">01</span>
+            <span class="offer-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1.7"/><path d="M16 8v16M8 16h16" stroke="currentColor" stroke-width="1.7"/></svg>
+            </span>
+            <h3>Identidad visual</h3>
+            <p>Logo principal, secundario, isotipo y manual para que te reconozcan a primera vista.</p>
+            <ul class="offer-card__deliverables">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Archivos vectoriales (AI, SVG, PDF)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Paleta de color CMYK / RGB / HEX</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Guía de uso tipográfico</li>
+            </ul>
+            <a class="offer-card__action" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20cotizar%20el%20servicio%20de%20Identidad%20Visual." target="_blank" rel="noopener">
+              <span>Cotizar en WhatsApp</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- 02 Branding y Sistema -->
+          <article class="offer-card reveal">
+            <span class="offer-card__num">02</span>
+            <span class="offer-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none"><rect x="7" y="7" width="13" height="13" rx="2" stroke="currentColor" stroke-width="1.7"/><rect x="12" y="12" width="13" height="13" rx="2" stroke="currentColor" stroke-width="1.7"/></svg>
+            </span>
+            <h3>Branding y sistema</h3>
+            <p>Estructura sólida, retículas y criterios para que tu marca se mantenga consistente en cualquier medio.</p>
+            <ul class="offer-card__deliverables">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Brandbook &amp; Manual de estilo</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Patrones y elementos gráficos</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Criterios de composición</li>
+            </ul>
+            <a class="offer-card__action" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20cotizar%20el%20servicio%20de%20Branding%20y%20Sistema." target="_blank" rel="noopener">
+              <span>Cotizar en WhatsApp</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- 03 Anuncios Publicitarios -->
+          <article class="offer-card reveal">
+            <span class="offer-card__num">03</span>
+            <span class="offer-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none"><path d="M8 13h6l10-5v16l-10-5H8a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 21.5V24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Anuncios publicitarios</h3>
+            <p>Piezas para campañas que capturan miradas, detienen el scroll y convierten prospectos en ventas.</p>
+            <ul class="offer-card__deliverables">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Creatividades Meta Ads &amp; Google</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Banners impresos y vallas</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Formatos optimizados por canal</li>
+            </ul>
+            <a class="offer-card__action" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20cotizar%20Anuncios%20Publicitarios." target="_blank" rel="noopener">
+              <span>Cotizar en WhatsApp</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- 04 Redes Sociales -->
+          <article class="offer-card reveal">
+            <span class="offer-card__num">04</span>
+            <span class="offer-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none"><rect x="6" y="6" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="18" y="6" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="6" y="18" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="18" y="18" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.7"/></svg>
+            </span>
+            <h3>Redes sociales</h3>
+            <p>Un feed coherente, plantillas y recursos que comunican autoridad y profesionalismo.</p>
+            <ul class="offer-card__deliverables">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Plantillas editables (Canva/Photoshop)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Portadas para historias destacadas</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Estructura estética de feed</li>
+            </ul>
+            <a class="offer-card__action" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20cotizar%20Dise%C3%B1o%20para%20Redes%20Sociales." target="_blank" rel="noopener">
+              <span>Cotizar en WhatsApp</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- 05 Merch y POP -->
+          <article class="offer-card reveal">
+            <span class="offer-card__num">05</span>
+            <span class="offer-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none"><path d="M11 9h10l3 4v13H8V13l3-4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M11 9c0 2.4 2.2 4 5 4s5-1.6 5-4" stroke="currentColor" stroke-width="1.7"/></svg>
+            </span>
+            <h3>Merch y material POP</h3>
+            <p>La marca en el mundo real: textiles, stands, papelería de eventos y merchandising que tus clientes usan.</p>
+            <ul class="offer-card__deliverables">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Camisetas, gorras, bolsas tote</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Roll-ups, banners y exhibidores</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Archivos técnicos para imprenta</li>
+            </ul>
+            <a class="offer-card__action" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20cotizar%20Merch%20y%20Material%20POP." target="_blank" rel="noopener">
+              <span>Cotizar en WhatsApp</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- 06 Packaging -->
+          <article class="offer-card reveal">
+            <span class="offer-card__num">06</span>
+            <span class="offer-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none"><path d="M8 12 16 8l8 4v12l-8 4-8-4V12Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 12l8 4 8-4M16 16v12" stroke="currentColor" stroke-width="1.7"/></svg>
+            </span>
+            <h3>Packaging y etiquetas</h3>
+            <p>Diseño de empaques y etiquetas que destacan en el lineal, transmiten calidad y generan experiencia de unboxing.</p>
+            <ul class="offer-card__deliverables">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Troqueles y planos mecánicos</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Mockups 3D hiperrealistas</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Preparación para serigrafía/offset</li>
+            </ul>
+            <a class="offer-card__action" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20cotizar%20Packaging%20y%20Etiquetas." target="_blank" rel="noopener">
+              <span>Cotizar en WhatsApp</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- 07 Editorial y Papelería -->
+          <article class="offer-card reveal">
+            <span class="offer-card__num">07</span>
+            <span class="offer-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none"><path d="M9 7h11l4 4v14H9V7Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M20 7v4h4M12 16h8M12 20h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Editorial y papelería</h3>
+            <p>Catálogos corporativos, dossiers comerciales, tarjetas de presentación y hojas membretadas.</p>
+            <ul class="offer-card__deliverables">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Tarjetas de presentación &amp; carpetas</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Catálogos digitales interactivos y PDF</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Sangrados y marcas de corte listas</li>
+            </ul>
+            <a class="offer-card__action" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20cotizar%20Editorial%20y%20Papeler%C3%ADa." target="_blank" rel="noopener">
+              <span>Cotizar en WhatsApp</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- 08 Dirección de Arte -->
+          <article class="offer-card reveal">
+            <span class="offer-card__num">08</span>
+            <span class="offer-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none"><rect x="6" y="8" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.7"/><circle cx="16" cy="16" r="4" stroke="currentColor" stroke-width="1.7"/><path d="M9 8V6h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Dirección de arte</h3>
+            <p>Supervisión visual global para marcas en crecimiento: coherencia fotográfica, campañas y estilo consistente.</p>
+            <ul class="offer-card__deliverables">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Concepto y narrativa visual</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Guías fotográficas y de estilo</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Acompañamiento continuo</li>
+            </ul>
+            <a class="offer-card__action" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20cotizar%20Direcci%C3%B3n%20de%20Arte." target="_blank" rel="noopener">
+              <span>Cotizar en WhatsApp</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+        </div>
+
+        <p class="services__more reveal">¿Buscas una combinación a medida o un proyecto integral? <a href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20tengo%20un%20proyecto%20personalizado%20y%20me%20gustar%C3%ADa%20conversar." target="_blank" rel="noopener">Escríbeme por WhatsApp y lo armamos juntos.</a></p>
+      </div>
+    </section>
+
+    <!-- PAQUETES & PLANES DESTACADOS (BANNERS PUBLICITARIOS) -->
+    <section class="packs" id="paquetes">
+      <div class="container">
+        <div class="section-head" style="text-align: center; margin-left: auto; margin-right: auto;">
+          <p class="section-kicker reveal">Packs Recomendados</p>
+          <h2 class="section-title reveal">Soluciones completas con inversión transparente.</h2>
+          <p class="section-lead reveal" style="margin-left: auto; margin-right: auto;">Diseñados para resolver las necesidades reales de tu negocio, con entregas estructuradas y acompañamiento de inicio a fin.</p>
+        </div>
+
+        <div class="packs__grid">
+          <!-- Pack 1: Starter -->
+          <div class="pack-card reveal">
+            <span class="pack-card__tag">Esencial</span>
+            <h3 class="pack-card__name">Identidad Starter</h3>
+            <p class="pack-card__desc">Ideal para profesionales y proyectos que inician y necesitan una presencia gráfica pulcra y coherente.</p>
+            <ul class="pack-card__features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Logotipo principal + versión reducida/isotipo</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Paleta de color corporativa (HEX/RGB/CMYK)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Selección y jerarquía tipográfica</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Archivos vectoriales listos para usar (AI, SVG, PNG)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Entrega en 7 a 10 días laborables</li>
+            </ul>
+            <a href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20me%20interesa%20el%20Pack%20Identidad%20Starter.%20%C2%BFPodemos%20hablar%3F" target="_blank" rel="noopener" class="btn btn--outline btn--pill">
+              Consultar por WhatsApp
+            </a>
+          </div>
+
+          <!-- Pack 2: Identidad 360 Pro (Featured) -->
+          <div class="pack-card pack-card--featured reveal">
+            <span class="pack-card__popular-badge">★ Más Elegido</span>
+            <span class="pack-card__tag">Completo 360°</span>
+            <h3 class="pack-card__name">Sistema de Marca Pro</h3>
+            <p class="pack-card__desc">Para empresas y marcas consolidadas que requieren un sistema visual robusto para vender en digital y físico.</p>
+            <ul class="pack-card__features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Logotipo + variantes responsivas + submarca</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <strong>Manual de Marca Completo</strong> (usos, retículas y normas)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Kit de Redes Sociales (9 plantillas editables + portadas)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Papelería corporativa básica (tarjetas + hoja membretada)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Mockups 3D hiperrealistas de aplicación</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <strong>Asesoría directa por WhatsApp durante el proceso</strong></li>
+            </ul>
+            <a href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20reservar%20el%20Pack%20Sistema%20de%20Marca%20Pro." target="_blank" rel="noopener" class="btn btn--whatsapp btn--pill">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c0-5.445 4.43-9.875 9.877-9.875 2.64 0 5.122 1.03 6.987 2.898a9.825 9.825 0 012.89 6.978c-.002 5.446-4.431 9.876-9.874 9.876m8.397-18.271A11.782 11.782 0 0012.047 0C5.405 0 .007 5.397.007 12.04c0 2.122.553 4.195 1.604 6.017L0 24l6.103-1.601a11.83 11.83 0 005.94 1.59h.005c6.64 0 12.037-5.397 12.037-12.04 0-3.217-1.253-6.241-3.527-8.512"/></svg>
+              <span>Elegir Pack Pro por WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- Pack 3: Campaña y Publicidad -->
+          <div class="pack-card reveal">
+            <span class="pack-card__tag">Campañas &amp; POP</span>
+            <h3 class="pack-card__name">Campaña &amp; Lanzamiento</h3>
+            <p class="pack-card__desc">Diseñado para marcas listas para anunciar un nuevo producto, evento o temporada con impacto masivo.</p>
+            <ul class="pack-card__features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Concepto creativo &amp; lema visual</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Set de anuncios digitales (Stories, Feeds, Banners web)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Material POP / gran formato (vallas, cartelería, flyers)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Asistencia técnica directa con tu imprenta</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Entrega de artes finales de alta resolución</li>
+            </ul>
+            <a href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20cotizar%20el%20Pack%20Campa%C3%B1a%20y%20Lanzamiento." target="_blank" rel="noopener" class="btn btn--outline btn--pill">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- METODOLOGÍA & PROCESO DE TRABAJO (4 FASES) -->
+    <section class="process" id="metodologia">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker reveal">Metodología Clara</p>
+          <h2 class="section-title reveal">Cómo trabajamos juntos paso a paso.</h2>
+          <p class="section-lead reveal">Un proceso transparente, sin rodeos y pensado para que disfrutes ver nacer la identidad de tu negocio.</p>
+        </div>
+
+        <div class="process__grid">
+          <!-- Paso 01 -->
+          <div class="process-step reveal">
+            <span class="process-step__number">01</span>
+            <h3>Briefing &amp; Diagnóstico</h3>
+            <p>Hablamos por WhatsApp o videollamada para conocer tu modelo de negocio, a quién le vendes y qué imagen deseas proyectar.</p>
+            <span class="process-step__badge">Fase de Análisis</span>
+          </div>
+
+          <!-- Paso 02 -->
+          <div class="process-step reveal">
+            <span class="process-step__number">02</span>
+            <h3>Dirección de Arte &amp; Moodboard</h3>
+            <p>Defino la ruta conceptual, exploración tipográfica y paletas de color con referencias visuales alineadas a tu sector.</p>
+            <span class="process-step__badge">Fase Estratégica</span>
+          </div>
+
+          <!-- Paso 03 -->
+          <div class="process-step reveal">
+            <span class="process-step__number">03</span>
+            <h3>Diseño &amp; Aplicaciones Reales</h3>
+            <p>Creo las propuestas visuales y te las presento montadas en mockups reales (empaques, pantallas, papelería) para que veas el resultado exacto.</p>
+            <span class="process-step__badge">Fase Creativa</span>
+          </div>
+
+          <!-- Paso 04 -->
+          <div class="process-step reveal">
+            <span class="process-step__number">04</span>
+            <h3>Entrega Maestra &amp; Guía de Uso</h3>
+            <p>Recibes todos tus archivos organizados por carpetas en formatos editables y listos para imprenta o web, con guía explicativa.</p>
+            <span class="process-step__badge">Archivos Listos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDER INFINITO DE HERRAMIENTAS Y ESTÁNDARES -->
+    <div class="tools-ticker" aria-hidden="true">
+      <div class="tools-ticker__track">
+        <span>Adobe Illustrator</span>
+        <span>Adobe Photoshop</span>
+        <span>Adobe InDesign</span>
+        <span>Figma UI/UX</span>
+        <span>Adobe After Effects</span>
+        <span>Impresión Offset &amp; Digital</span>
+        <span>Colores Pantone®</span>
+        <span>Vectorizado SVG / EPS / PDF</span>
+        <span>Adobe Illustrator</span>
+        <span>Adobe Photoshop</span>
+        <span>Adobe InDesign</span>
+        <span>Figma UI/UX</span>
+        <span>Adobe After Effects</span>
+        <span>Impresión Offset &amp; Digital</span>
+        <span>Colores Pantone®</span>
+        <span>Vectorizado SVG / EPS / PDF</span>
+      </div>
+    </div>
+
+    <!-- PORTAFOLIO CON SLIDER INFINITO MEJORADO -->
+    <section class="projects" id="proyectos">
+      <div class="container">
+        <div class="projects__head">
+          <div>
+            <p class="section-kicker reveal">Portafolio</p>
+            <h2 class="section-title reveal">Casos de éxito y marcas reales.</h2>
+          </div>
+          <div class="slider-nav">
+            <button class="nav-circle" id="prevProject" type="button" aria-label="Anterior">‹</button>
+            <button class="nav-circle" id="nextProject" type="button" aria-label="Siguiente">›</button>
+          </div>
+        </div>
+        <p class="section-lead projects__lead reveal">Proyectos desarrollados para resolver necesidades concretas de posicionamiento, ventas y coherencia gráfica.</p>
+        <div class="slider-wrap">
+          <div class="slider" id="projectSlider">
+            <!-- Proyecto 1 -->
+            <article class="slide pcard">
+              <div class="pcard__media">
+                <img src="assets/img/proj-g404.jpg" alt="Identidad Estudio G404" />
+                <span class="pcard__badge">Destacado</span>
+              </div>
+              <p class="pcard__meta">Identidad visual · Sistema de marca</p>
+              <div class="pcard__body">
+                <div class="pcard__who">
+                  <span class="pcard__avatar">BR</span>
+                  <div>
+                    <h3>Estudio G404</h3>
+                    <small>Identidad tech &amp; digital</small>
+                  </div>
+                </div>
+                <div class="pcard__side">
+                  <span>Servicio</span>
+                  <strong>Branding</strong>
+                </div>
+              </div>
+              <div class="pcard__footer">
+                <a class="pcard__btn" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20vi%20el%20proyecto%20de%20Estudio%20G404%20y%20quiero%20cotizar%20uno%20similar%20para%20mi%20marca." target="_blank" rel="noopener">Quiero uno así</a>
+                <a class="pcard__link" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20%C2%BFme%20cuentas%20m%C3%A1s%20detalles%20del%20caso%20Estudio%20G404%3F" target="_blank" rel="noopener">Consultar</a>
+              </div>
+            </article>
+
+            <!-- Proyecto 2 -->
+            <article class="slide pcard">
+              <div class="pcard__media pcard__media--contain">
+                <img src="assets/img/proj-dipollos.png" alt="Logo Di-Pollos" />
+                <span class="pcard__badge">Gastronomía</span>
+              </div>
+              <p class="pcard__meta">Branding gastronómico &amp; packaging</p>
+              <div class="pcard__body">
+                <div class="pcard__who">
+                  <span class="pcard__avatar">BR</span>
+                  <div>
+                    <h3>Di-Pollos</h3>
+                    <small>Cadena gastronómica</small>
+                  </div>
+                </div>
+                <div class="pcard__side">
+                  <span>Servicio</span>
+                  <strong>Logo &amp; Pack</strong>
+                </div>
+              </div>
+              <div class="pcard__footer">
+                <a class="pcard__btn" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20me%20gust%C3%B3%20el%20logo%20de%20Di-Pollos%20y%20quiero%20cotizar%20para%20mi%20negocio%20gastron%C3%B3mico." target="_blank" rel="noopener">Quiero uno así</a>
+                <a class="pcard__link" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quisiera%20saber%20m%C3%A1s%20del%20branding%20de%20Di-Pollos." target="_blank" rel="noopener">Consultar</a>
+              </div>
+            </article>
+
+            <!-- Proyecto 3 -->
+            <article class="slide pcard">
+              <div class="pcard__media">
+                <img src="assets/img/proj-networking.jpg" alt="Networking HUB" />
+                <span class="pcard__badge">Identidad</span>
+              </div>
+              <p class="pcard__meta">Marca de comunidad &amp; eventos</p>
+              <div class="pcard__body">
+                <div class="pcard__who">
+                  <span class="pcard__avatar">BR</span>
+                  <div>
+                    <h3>Networking HUB</h3>
+                    <small>Identidad digital &amp; POP</small>
+                  </div>
+                </div>
+                <div class="pcard__side">
+                  <span>Servicio</span>
+                  <strong>Branding</strong>
+                </div>
+              </div>
+              <div class="pcard__footer">
+                <a class="pcard__btn" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20vi%20el%20proyecto%20Networking%20HUB%20y%20quiero%20cotizar%20uno%20para%20mi%20empresa." target="_blank" rel="noopener">Quiero uno así</a>
+                <a class="pcard__link" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20me%20interesa%20la%20identidad%20de%20Networking%20HUB." target="_blank" rel="noopener">Consultar</a>
+              </div>
+            </article>
+
+            <!-- Proyecto 4 -->
+            <article class="slide pcard">
+              <div class="pcard__media">
+                <img src="assets/img/proj-cambre.jpg" alt="Club Béisbol y Sófbol Cambre" />
+                <span class="pcard__badge">Campaña</span>
+              </div>
+              <p class="pcard__meta">Campaña 35 aniversario &amp; Merch</p>
+              <div class="pcard__body">
+                <div class="pcard__who">
+                  <span class="pcard__avatar">BR</span>
+                  <div>
+                    <h3>CBS Cambre</h3>
+                    <small>Campaña deportiva oficial</small>
+                  </div>
+                </div>
+                <div class="pcard__side">
+                  <span>Servicio</span>
+                  <strong>Ads &amp; Merch</strong>
+                </div>
+              </div>
+              <div class="pcard__footer">
+                <a class="pcard__btn" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20vi%20la%20campa%C3%B1a%20de%20CBS%20Cambre%20y%20quiero%20cotizar%20campa%C3%B1a%20y%20merchandising." target="_blank" rel="noopener">Quiero uno así</a>
+                <a class="pcard__link" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20%C2%BFqu%C3%A9%20incluy%C3%B3%20la%20campa%C3%B1a%20de%20CBS%20Cambre%3F" target="_blank" rel="noopener">Consultar</a>
+              </div>
+            </article>
+
+            <!-- Proyecto 5 -->
+            <article class="slide pcard">
+              <div class="pcard__media">
+                <img src="assets/img/proj-marka.jpg" alt="Marka beciña" />
+                <span class="pcard__badge">Identidad</span>
+              </div>
+              <p class="pcard__meta">Identidad de marca local &amp; retail</p>
+              <div class="pcard__body">
+                <div class="pcard__who">
+                  <span class="pcard__avatar">BR</span>
+                  <div>
+                    <h3>Marka beciña</h3>
+                    <small>Comercio y cercanía</small>
+                  </div>
+                </div>
+                <div class="pcard__side">
+                  <span>Servicio</span>
+                  <strong>Branding</strong>
+                </div>
+              </div>
+              <div class="pcard__footer">
+                <a class="pcard__btn" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20me%20gust%C3%B3%20la%20identidad%20de%20Marka%20beci%C3%B1a%20para%20un%20comercio%20local." target="_blank" rel="noopener">Quiero uno así</a>
+                <a class="pcard__link" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20de%20Marka%20beci%C3%B1a." target="_blank" rel="noopener">Consultar</a>
+              </div>
+            </article>
+
+            <!-- Proyecto 6 -->
+            <article class="slide pcard">
+              <div class="pcard__media">
+                <img src="assets/img/svc-ads.jpg" alt="Distribuidora V&amp;G" />
+                <span class="pcard__badge">Publicidad</span>
+              </div>
+              <p class="pcard__meta">Anuncio publicitario &amp; catálogo</p>
+              <div class="pcard__body">
+                <div class="pcard__who">
+                  <span class="pcard__avatar">BR</span>
+                  <div>
+                    <h3>Distribuidora V&amp;G</h3>
+                    <small>Campaña de producto</small>
+                  </div>
+                </div>
+                <div class="pcard__side">
+                  <span>Servicio</span>
+                  <strong>Ads</strong>
+                </div>
+              </div>
+              <div class="pcard__footer">
+                <a class="pcard__btn" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20cotizar%20anuncios%20publicitarios%20como%20los%20de%20Distribuidora%20V%26G." target="_blank" rel="noopener">Quiero uno así</a>
+                <a class="pcard__link" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quisiera%20detalles%20de%20las%20piezas%20de%20Distribuidora%20V%26G." target="_blank" rel="noopener">Consultar</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why" id="diferencia">
+      <div class="why__grid">
+        <div class="why__copy">
+          <p class="why__tag reveal">
+            <span class="why__tag-icon" aria-hidden="true"></span>
+            Por qué elegirme
+          </p>
+          <h2 class="why__title reveal">Qué me hace diferente</h2>
+          <ul class="why__list">
+            <li class="why__item reveal">
+              <span class="why__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="7" rx="1.2"/><rect x="14" y="3" width="7" height="7" rx="1.2"/><rect x="3" y="14" width="7" height="7" rx="1.2"/><rect x="14" y="14" width="7" height="7" rx="1.2"/></svg>
+              </span>
+              <div>
+                <h3>Diseño con criterio de marca</h3>
+                <p>No decoro. Construyo un sistema visual que se reconoce en logo, redes, anuncios y merch.</p>
+              </div>
+            </li>
+            <li class="why__item reveal">
+              <span class="why__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 4v2M12 18v2M4 12h2M18 12h2"/></svg>
+              </span>
+              <div>
+                <h3>Foco en que te elijan</h3>
+                <p>Cada pieza tiene un objetivo: que tu negocio se vea claro, profesional y distinto a la competencia.</p>
+              </div>
+            </li>
+            <li class="why__item reveal">
+              <span class="why__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3 5 7v5c0 5 3.2 7.8 7 9 3.8-1.2 7-4 7-9V7l-7-4z"/><path d="m9 12 2 2 4-4"/></svg>
+              </span>
+              <div>
+                <h3>Proceso cercano y listo para producir</h3>
+                <p>Briefing, propuestas y entrega aplicada: archivos ordenados para imprimir, publicar o producir.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="why__visual" aria-hidden="true">
+          <div class="why__blob"></div>
+          <img class="why__photo" src="assets/img/portrait-about.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="logo-strip" id="identidad">
+      <span id="anuncios" class="visually-hidden"></span>
+      <span id="redes" class="visually-hidden"></span>
+      <div class="container">
+        <div class="section-head" style="text-align: center; margin-left: auto; margin-right: auto;">
+          <p class="section-kicker reveal">Identidad visual</p>
+          <h2 class="section-title reveal">Marcas que ya ocupan su espacio.</h2>
+        </div>
+      </div>
+      <div class="logo-strip__viewport" role="region" aria-label="Logotipos de marcas">
+        <div class="logo-strip__track">
+          <div class="logo-strip__set">
+            <img src="assets/img/marca-01.webp" alt="Identidad visual 01" />
+            <img src="assets/img/marca-02.webp" alt="Identidad visual 02" />
+            <img src="assets/img/marca-03.webp" alt="Identidad visual 03" />
+            <img src="assets/img/marca-04.webp" alt="Identidad visual 04" />
+            <img src="assets/img/marca-05.webp" alt="Identidad visual 05" />
+            <img src="assets/img/marca-06.webp" alt="Identidad visual 06" />
+            <img src="assets/img/marca-07.webp" alt="Identidad visual 07" />
+            <img src="assets/img/marca-08.webp" alt="Identidad visual 08" />
+          </div>
+          <div class="logo-strip__set" aria-hidden="true">
+            <img src="assets/img/marca-01.webp" alt="" />
+            <img src="assets/img/marca-02.webp" alt="" />
+            <img src="assets/img/marca-03.webp" alt="" />
+            <img src="assets/img/marca-04.webp" alt="" />
+            <img src="assets/img/marca-05.webp" alt="" />
+            <img src="assets/img/marca-06.webp" alt="" />
+            <img src="assets/img/marca-07.webp" alt="" />
+            <img src="assets/img/marca-08.webp" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" id="merch">
+      <div class="cta-band__bg"></div>
+      <div class="cta-band__content">
+        <h2 class="cta-band__phrase">Si tu marca no se recuerda, no existe.</h2>
+        <p class="cta-band__sub">Déjame tu correo y te escribo para ver qué necesita tu negocio: identidad, campañas o material listo para producir.</p>
+        <form class="cta-band__form" id="ctaLead">
+          <label class="visually-hidden" for="ctaEmail">Correo electrónico</label>
+          <input id="ctaEmail" type="email" name="email" required placeholder="Tu correo electrónico" autocomplete="email" />
+          <button type="submit">Empezar</button>
+        </form>
+        <ul class="cta-band__perks">
+          <li>Respuesta por WhatsApp</li>
+          <li>Sin compromiso</li>
+          <li>Primer paso en una conversación</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS CON CALIFICACIÓN 5 ESTRELLAS -->
+    <section class="quotes" id="testimonios">
+      <div class="container quotes__grid">
+        <div class="quotes__intro">
+          <p class="section-kicker reveal">Opiniones Reales</p>
+          <h2 class="quotes__title reveal">Valor y resultados tangibles para marcas reales.</h2>
+          <p class="quotes__lead reveal">Identidad, campañas y piezas que ya están trabajando para negocios de distintos sectores. El siguiente puede ser el tuyo.</p>
+          <a class="btn btn--whatsapp btn--pill" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20unirme%20a%20tus%20clientes%20satisfechos%20y%20crear%20mi%20marca." target="_blank" rel="noopener" style="display: inline-flex; width: fit-content;">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c0-5.445 4.43-9.875 9.877-9.875 2.64 0 5.122 1.03 6.987 2.898a9.825 9.825 0 012.89 6.978c-.002 5.446-4.431 9.876-9.874 9.876m8.397-18.271A11.782 11.782 0 0012.047 0C5.405 0 .007 5.397.007 12.04c0 2.122.553 4.195 1.604 6.017L0 24l6.103-1.601a11.83 11.83 0 005.94 1.59h.005c6.64 0 12.037-5.397 12.037-12.04 0-3.217-1.253-6.241-3.527-8.512"/></svg>
+            <span>Hablemos por WhatsApp</span>
+          </a>
+        </div>
+        <div class="quotes__stack">
+          <!-- Testimonio 1 -->
+          <article class="quote-card reveal">
+            <div class="stars-row" aria-label="Calificación 5 de 5 estrellas">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="quote-card__mark" aria-hidden="true">“</span>
+            <p>Pasamos de un logo suelto a un sistema que se reconoce en web, redes y merch. Por fin la marca se ve como la empresa consolidada que somos.</p>
+            <div class="quote-card__foot">
+              <div>
+                <strong>Orión García</strong>
+                <span>Director · Estudio G404</span>
+              </div>
+              <span class="quote-card__avatar" aria-hidden="true">OG</span>
+            </div>
+          </article>
+
+          <!-- Testimonio 2 -->
+          <article class="quote-card reveal">
+            <div class="stars-row" aria-label="Calificación 5 de 5 estrellas">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="quote-card__mark" aria-hidden="true">“</span>
+            <p>El branding tenía que ser cercano y con carácter gastronómico. Bárbara captó el tono de inmediato y los empaques se imprimieron perfectos sin ningún error de imprenta.</p>
+            <div class="quote-card__foot">
+              <div>
+                <strong>Equipo Di-Pollos</strong>
+                <span>Branding gastronómico</span>
+              </div>
+              <span class="quote-card__avatar quote-card__avatar--gold" aria-hidden="true">DP</span>
+            </div>
+          </article>
+
+          <!-- Testimonio 3 -->
+          <article class="quote-card reveal">
+            <div class="stars-row" aria-label="Calificación 5 de 5 estrellas">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="quote-card__mark" aria-hidden="true">“</span>
+            <p>La campaña del aniversario fue potente: fuerte, clara y con auténtica identidad de club. Se aplicó en camisetas, vallas y redes con un impacto increíble.</p>
+            <div class="quote-card__foot">
+              <div>
+                <strong>CBS Cambre</strong>
+                <span>Campaña 35 aniversario</span>
+              </div>
+              <span class="quote-card__avatar quote-card__avatar--coral" aria-hidden="true">CB</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES (FAQ INTERACTIVO) -->
+    <section class="faq" id="faq">
+      <div class="container faq__container">
+        <div class="section-head" style="text-align: center; margin-left: auto; margin-right: auto;">
+          <p class="section-kicker reveal">Dudas Resueltas</p>
+          <h2 class="section-title reveal">Preguntas frecuentes</h2>
+          <p class="section-lead reveal" style="margin-left: auto; margin-right: auto;">Todo lo que necesitas saber antes de dar el paso e iniciar el diseño de tu marca.</p>
+        </div>
+
+        <div class="faq__list">
+          <!-- Pregunta 1 -->
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>¿Qué archivos y formatos recibo al finalizar el proyecto?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Recibes un paquete organizado en carpetas con archivos vectoriales editables (<strong>Adobe Illustrator .AI, EPS y SVG</strong>) que nunca pierden resolución al ampliarse, archivos para imprenta en <strong>PDF de alta calidad</strong> (con sangrados y perfiles de color CMYK), e imágenes optimizadas en <strong>PNG de alta resolución con fondo transparente</strong> y JPG para uso digital.
+              </div>
+            </div>
+          </div>
+
+          <!-- Pregunta 2 -->
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>¿Cuánto tiempo demora el desarrollo de una identidad completa?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Un proyecto de Identidad Visual suele tardar entre <strong>10 y 15 días laborables</strong>. Para piezas publicitarias específicas o material POP puntual, los plazos van de <strong>3 a 5 días</strong>. Si tienes una fecha límite o lanzamiento urgente, podemos acordar un cronograma prioritario.
+              </div>
+            </div>
+          </div>
+
+          <!-- Pregunta 3 -->
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>¿Cómo es la modalidad de pago?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Normalmente trabajamos con un <strong>50% de anticipo al inicio</strong> para reservar cupo en agenda y comenzar la fase de briefing y exploración, y el <strong>50% restante a la aprobación final</strong>, justo antes del envío de los archivos maestros editables.
+              </div>
+            </div>
+          </div>
+
+          <!-- Pregunta 4 -->
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>¿Incluye rondas de revisión y ajustes?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                ¡Por supuesto! Cada proyecto incluye <strong>rondas de revisión estructuradas</strong> para ajustar colores, tipografías y composición hasta que quedes 100% satisfecho con tu nueva marca. Mi objetivo es que te sientas plenamente orgulloso de tu imagen.
+              </div>
+            </div>
+          </div>
+
+          <!-- Pregunta 5 -->
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>¿Trabajas con clientes internacionales fuera de España?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Sí. Trabajo con marcas de España, Latinoamérica, Estados Unidos y Europa. La comunicación se realiza de forma ágil y directa vía <strong>WhatsApp y Google Meet</strong>, con entregas en la nube organizadas y accesibles en cualquier momento.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="faq__cta reveal">¿Tienes otra pregunta en mente? <a href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20tengo%20una%20consulta%20antes%20de%20empezar%20mi%20dise%C3%B1o." target="_blank" rel="noopener">Escríbeme por WhatsApp y te respondo al momento.</a></p>
+      </div>
+    </section>
+
+    <!-- BANNER PUBLICITARIO DE CIERRE / CTA BAND -->
+    <section class="cta-band" id="merch">
+      <div class="cta-band__bg"></div>
+      <div class="cta-band__content">
+        <h2 class="cta-band__phrase">Si tu marca no se recuerda, no existe.</h2>
+        <p class="cta-band__sub">Elevemos hoy mismo la imagen de tu negocio. Hablemos de tus metas y recibe una propuesta visual clara y lista para producir.</p>
+        
+        <div style="margin-bottom: 28px;">
+          <a class="btn btn--whatsapp btn--pill" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20iniciar%20un%20proyecto%20de%20dise%C3%B1o%20gr%C3%A1fico." target="_blank" rel="noopener" style="font-size: 15px; padding: 16px 32px;">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width: 22px; height: 22px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c0-5.445 4.43-9.875 9.877-9.875 2.64 0 5.122 1.03 6.987 2.898a9.825 9.825 0 012.89 6.978c-.002 5.446-4.431 9.876-9.874 9.876m8.397-18.271A11.782 11.782 0 0012.047 0C5.405 0 .007 5.397.007 12.04c0 2.122.553 4.195 1.604 6.017L0 24l6.103-1.601a11.83 11.83 0 005.94 1.59h.005c6.64 0 12.037-5.397 12.037-12.04 0-3.217-1.253-6.241-3.527-8.512"/></svg>
+            <span>Conversar ahora por WhatsApp</span>
+          </a>
+        </div>
+
+        <form class="cta-band__form" id="ctaLead">
+          <label class="visually-hidden" for="ctaEmail">Correo electrónico</label>
+          <input id="ctaEmail" type="email" name="email" required placeholder="O déjame tu correo electrónico" autocomplete="email" />
+          <button type="submit">Enviar a WhatsApp</button>
+        </form>
+        <ul class="cta-band__perks">
+          <li>Respuesta directa por WhatsApp</li>
+          <li>Sin compromiso ni costes ocultos</li>
+          <li>Asesoramiento inicial personalizado</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <section class="contact" id="contacto">
+      <div class="container contact__grid">
+        <div>
+          <p class="section-kicker reveal">Contacto Directo</p>
+          <h2 class="section-title reveal">Cuéntame qué necesita tu marca.</h2>
+          <p class="section-lead reveal">Respuesta directa por WhatsApp. Si tienes briefing, logo actual o referencias visuales, mejor: llegamos antes al resultado.</p>
+          <ul class="contact__points">
+            <li>Identidad nueva o rediseño integral</li>
+            <li>Campañas, anuncios y material POP</li>
+            <li>Packaging, papelería y diseño para imprenta</li>
+            <li>Proyectos para pymes, profesionales y marcas locales</li>
+          </ul>
+        </div>
+        <form class="contact__form" id="contactForm">
+          <label>
+            Nombre
+            <input type="text" name="name" required placeholder="Tu nombre o negocio" />
+          </label>
+          <label>
+            Servicio que necesitas
+            <select name="type" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option>Pack Identidad Starter</option>
+              <option>Pack Sistema de Marca Pro (360°)</option>
+              <option>Pack Campaña y Lanzamiento</option>
+              <option>Identidad visual &amp; Logotipo</option>
+              <option>Branding y sistema</option>
+              <option>Anuncios publicitarios</option>
+              <option>Redes sociales</option>
+              <option>Merch y material POP</option>
+              <option>Packaging y etiquetas</option>
+              <option>Editorial y papelería</option>
+              <option>Dirección de arte</option>
+              <option>Proyecto a medida / Otro</option>
+            </select>
+          </label>
+          <label>
+            Mensaje / Detalles
+            <textarea name="message" rows="4" required placeholder="Cuéntame sobre tu marca, plazos o qué buscas lograr"></textarea>
+          </label>
+          <button class="btn btn--whatsapp btn--pill" type="submit" style="width: 100%; justify-content: center;">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c0-5.445 4.43-9.875 9.877-9.875 2.64 0 5.122 1.03 6.987 2.898a9.825 9.825 0 012.89 6.978c-.002 5.446-4.431 9.876-9.874 9.876m8.397-18.271A11.782 11.782 0 0012.047 0C5.405 0 .007 5.397.007 12.04c0 2.122.553 4.195 1.604 6.017L0 24l6.103-1.601a11.83 11.83 0 005.94 1.59h.005c6.64 0 12.037-5.397 12.037-12.04 0-3.217-1.253-6.241-3.527-8.512"/></svg>
+            <span>Enviar mensaje por WhatsApp</span>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="brand brand--footer">
+        <span class="brand__mark">
+          <svg viewBox="0 0 88 88" fill="none"><path d="M18 14v60M18 14h28c13.5 0 24 8.2 24 20.2 0 8.6-5.2 15.4-13.8 18.4 10.6 2.4 17.8 10.2 17.8 21.2 0 13-11.6 20.2-28 20.2H18M46 44.6L74 74" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="brand__text">
+          <strong>Bárbara Ruiz</strong>
+          <small>Diseñadora Gráfica &amp; Dirección de Arte</small>
+        </span>
+      </div>
+      <p>© <span id="year"></span> Bárbara Ruiz. Todos los derechos reservados · Diseño con carácter.</p>
+    </div>
+  </footer>
+
+  <!-- Botón Flotante con Tooltip Interactivo de WhatsApp -->
+  <a class="wa-float" id="whatsappBtn" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20hablar%20de%20un%20proyecto%20de%20dise%C3%B1o%20gr%C3%A1fico." target="_blank" rel="noopener" data-phone="34602803747" aria-label="Contactar por WhatsApp">
+    <span class="wa-float__pulse"></span>
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c0-5.445 4.43-9.875 9.877-9.875 2.64 0 5.122 1.03 6.987 2.898a9.825 9.825 0 012.89 6.978c-.002 5.446-4.431 9.876-9.874 9.876m8.397-18.271A11.782 11.782 0 0012.047 0C5.405 0 .007 5.397.007 12.04c0 2.122.553 4.195 1.604 6.017L0 24l6.103-1.601a11.83 11.83 0 005.94 1.59h.005c6.64 0 12.037-5.397 12.037-12.04 0-3.217-1.253-6.241-3.527-8.512"/></svg>
+    <div class="wa-float__tooltip">
+      <span class="wa-float__tooltip-dot"></span>
+      <span>En línea · Respuesta rápida</span>
+    </div>
+    <span class="wa-float__label">WhatsApp</span>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script>
+const WHATSAPP_NUMBER = document.getElementById("whatsappBtn")?.dataset.phone || "34602803747";
+
+const preloader = document.getElementById("preloader");
+const header = document.getElementById("header");
+const menuBtn = document.getElementById("menuBtn");
+const menuOverlay = document.getElementById("menuOverlay");
+const year = document.getElementById("year");
+
+if (year) year.textContent = new Date().getFullYear();
+
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+let lenis;
+
+function scrollToEl(el) {
+  if (!el) return;
+  const offset = -72;
+  if (lenis) {
+    lenis.scrollTo(el, { offset, duration: 1.1 });
+  } else {
+    const top = el.getBoundingClientRect().top + window.scrollY + offset;
+    window.scrollTo({ top, behavior: reduceMotion ? "auto" : "smooth" });
+  }
+}
+
+function hidePreloader() {
+  const el = document.getElementById("preloader");
+  if (!el) return;
+  el.classList.add("is-done");
+  setTimeout(() => el.remove(), 800);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("is-ready");
+  const start = () => {
+    hidePreloader();
+    try {
+      if (window.gsap) intro();
+    } catch (err) {
+      console.warn(err);
+    }
+    const hashEl = location.hash ? document.querySelector(location.hash) : null;
+    if (hashEl) setTimeout(() => scrollToEl(hashEl), 200);
+  };
+  setTimeout(start, reduceMotion ? 0 : 650);
+});
+
+function intro() {
+  const lines = document.querySelectorAll(".hero__title .line");
+  lines.forEach((line) => {
+    const text = line.textContent;
+    line.textContent = "";
+    [...text].forEach((ch) => {
+      const span = document.createElement("span");
+      span.style.display = "inline-block";
+      const inner = document.createElement("span");
+      inner.style.display = "inline-block";
+      inner.textContent = ch === " " ? "\u00a0" : ch;
+      span.appendChild(inner);
+      line.appendChild(span);
+    });
+  });
+
+  const tl = gsap.timeline();
+  tl.from(".hero__title .line span span", {
+      yPercent: 120,
+      duration: 1,
+      stagger: 0.018,
+      ease: "power4.out",
+    }, "-=0.4")
+    .from(".hero__status-pill, .eyebrow, .hero__sub, .hero__actions, .hero__stats", {
+      y: 18,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.06,
+      ease: "power3.out",
+    }, "-=0.6");
+}
+
+if (window.gsap && window.ScrollTrigger && !reduceMotion) {
+  gsap.registerPlugin(ScrollTrigger);
+  document.body.classList.add("has-anim");
+
+  gsap.utils.toArray(".reveal, .section-title, .section-lead, .offer-card, .leaf-card, .pill, .why__item, .quote-card, .promo-banner, .pack-card, .process-step, .faq-item").forEach((el) => {
+    gsap.from(el, {
+      y: 36,
+      duration: 0.85,
+      ease: "power3.out",
+      immediateRender: false,
+      scrollTrigger: {
+        trigger: el,
+        start: "top 92%",
+        once: true,
+      },
+    });
+  });
+
+  gsap.fromTo(".cta-band__bg",
+    { yPercent: -8 },
+    {
+      yPercent: 8,
+      ease: "none",
+      scrollTrigger: { trigger: ".cta-band", start: "top bottom", end: "bottom top", scrub: true },
+    }
+  );
+}
+
+if (window.Lenis && !reduceMotion) {
+  lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+  if (window.gsap && window.ScrollTrigger) {
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+  } else {
+    const raf = (time) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+    requestAnimationFrame(raf);
+  }
+  window.addEventListener("load", () => {
+    lenis.resize();
+    if (window.ScrollTrigger) ScrollTrigger.refresh();
+  });
+}
+
+function updateAnnouncementHeight() {
+  const bar = document.querySelector(".announcement-bar");
+  if (bar) {
+    const h = bar.offsetHeight;
+    document.documentElement.style.setProperty("--announcement-h", `${h}px`);
+  }
+}
+window.addEventListener("resize", updateAnnouncementHeight, { passive: true });
+updateAnnouncementHeight();
+
+window.addEventListener("scroll", () => {
+  const bar = document.querySelector(".announcement-bar");
+  const threshold = bar ? Math.max(10, bar.offsetHeight - 6) : 12;
+  header?.classList.toggle("is-scrolled", window.scrollY > threshold);
+}, { passive: true });
+
+function toggleMenu(open) {
+  const willOpen = open ?? !menuOverlay.classList.contains("is-open");
+  menuOverlay.classList.toggle("is-open", willOpen);
+  menuBtn.classList.toggle("is-open", willOpen);
+  document.body.classList.toggle("menu-open", willOpen);
+  menuBtn.setAttribute("aria-expanded", String(willOpen));
+}
+
+menuBtn?.addEventListener("click", () => toggleMenu());
+menuOverlay?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => toggleMenu(false)));
+
+document.querySelectorAll('a[href^="#"]').forEach((a) => {
+  a.addEventListener("click", (e) => {
+    const id = a.getAttribute("href");
+    const target = id && document.querySelector(id);
+    if (!target) return;
+    e.preventDefault();
+    scrollToEl(target);
+    history.replaceState(null, "", id);
+  });
+});
+
+function initProjectCarousel() {
+  const track = document.getElementById("projectSlider");
+  if (!track) return;
+
+  const originals = [...track.children];
+  const count = originals.length;
+  originals.forEach((el) => track.appendChild(el.cloneNode(true)));
+  originals.slice().reverse().forEach((el) => track.insertBefore(el.cloneNode(true), track.firstChild));
+
+  const step = () => {
+    const slide = track.querySelector(".slide");
+    const styles = getComputedStyle(track);
+    const gap = parseFloat(styles.columnGap || styles.gap) || 28;
+    return slide.offsetWidth + gap;
+  };
+
+  const jumpToMiddle = () => {
+    track.style.scrollBehavior = "auto";
+    track.scrollLeft = step() * count;
+    track.style.scrollBehavior = "";
+  };
+
+  requestAnimationFrame(jumpToMiddle);
+
+  const wrap = () => {
+    const w = step();
+    const block = w * count;
+    if (block < 10) return;
+    if (track.scrollLeft < block) {
+      track.style.scrollBehavior = "auto";
+      track.scrollLeft += block;
+      track.style.scrollBehavior = "";
+    } else if (track.scrollLeft >= block * 2) {
+      track.style.scrollBehavior = "auto";
+      track.scrollLeft -= block;
+      track.style.scrollBehavior = "";
+    }
+  };
+
+  let scrollTimer;
+  track.addEventListener("scroll", () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(wrap, 90);
+  }, { passive: true });
+
+  const go = (dir) => {
+    track.scrollBy({ left: dir * step(), behavior: "smooth" });
+  };
+
+  document.getElementById("prevProject")?.addEventListener("click", () => go(-1));
+  document.getElementById("nextProject")?.addEventListener("click", () => go(1));
+
+  let isDown = false;
+  let startX = 0;
+  let scrollStart = 0;
+  track.addEventListener("pointerdown", (e) => {
+    if (e.target.closest("a, button")) return;
+    isDown = true;
+    startX = e.pageX;
+    scrollStart = track.scrollLeft;
+    track.classList.add("is-dragging");
+    track.setPointerCapture(e.pointerId);
+    stopAutoPlay();
+  });
+  track.addEventListener("pointermove", (e) => {
+    if (!isDown) return;
+    track.scrollLeft = scrollStart - (e.pageX - startX);
+  });
+  const stopDrag = () => {
+    isDown = false;
+    track.classList.remove("is-dragging");
+    wrap();
+    startAutoPlay();
+  };
+  track.addEventListener("pointerup", stopDrag);
+  track.addEventListener("pointercancel", stopDrag);
+
+  // Auto-desplazamiento infinito continuo y fluido
+  let autoPlayTimer;
+  function startAutoPlay() {
+    stopAutoPlay();
+    if (reduceMotion) return;
+    autoPlayTimer = setInterval(() => {
+      if (!isDown) {
+        track.scrollBy({ left: step(), behavior: "smooth" });
+      }
+    }, 3800);
+  }
+  function stopAutoPlay() {
+    if (autoPlayTimer) clearInterval(autoPlayTimer);
+  }
+
+  track.addEventListener("mouseenter", stopAutoPlay);
+  track.addEventListener("mouseleave", startAutoPlay);
+  startAutoPlay();
+}
+
+initProjectCarousel();
+
+// FAQ Accordion
+document.querySelectorAll(".faq-question").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const item = btn.closest(".faq-item");
+    const isActive = item.classList.contains("is-active");
+    document.querySelectorAll(".faq-item").forEach((el) => el.classList.remove("is-active"));
+    if (!isActive) item.classList.add("is-active");
+  });
+});
+
+// Manejador genérico para enlaces con mensaje personalizado a WhatsApp
+document.querySelectorAll("[data-wa-message]").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const msg = btn.getAttribute("data-wa-message");
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
+  });
+});
+
+document.getElementById("contactForm")?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const data = new FormData(e.currentTarget);
+  const name = data.get("name");
+  const type = data.get("type");
+  const message = data.get("message");
+  const text = `Hola Bárbara, soy ${name}. Necesito: ${type}. ${message}`;
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+});
+
+document.getElementById("ctaLead")?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const email = new FormData(e.currentTarget).get("email");
+  const text = `Hola Bárbara, quiero empezar un proyecto. Mi correo es ${email}.`;
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+});
+
+(function initHeroLiquid() {
+  const hero = document.querySelector(".hero");
+  const canvas = document.getElementById("heroLiquid");
+  if (!hero || !canvas || reduceMotion) return;
+
+  const ctx = canvas.getContext("2d", { alpha: false });
+  const blobs = [
+    { restX: 0.06, restY: 0.50, r: 0.52, color: [122, 46, 114], speed: 0.045, x: 0.06, y: 0.50 },
+    { restX: 0.26, restY: 0.42, r: 0.46, color: [194, 47, 119], speed: 0.058, x: 0.26, y: 0.42 },
+    { restX: 0.50, restY: 0.50, r: 0.54, color: [206, 214, 123], speed: 0.050, x: 0.50, y: 0.50 },
+    { restX: 0.68, restY: 0.40, r: 0.42, color: [242, 228, 167], speed: 0.070, x: 0.68, y: 0.40 },
+    { restX: 0.92, restY: 0.52, r: 0.50, color: [225, 90, 69], speed: 0.052, x: 0.92, y: 0.52 },
+    { restX: 0.40, restY: 0.78, r: 0.32, color: [194, 47, 119], speed: 0.064, x: 0.40, y: 0.78 },
+  ];
+
+  const rgba = (rgb, a) => `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${a})`;
+
+  let mx = 0.5;
+  let my = 0.5;
+  let smx = 0.5;
+  let smy = 0.5;
+  let hovering = false;
+  let visible = true;
+  let t = 0;
+  let w = 0;
+  let h = 0;
+
+  function resize() {
+    const rect = hero.getBoundingClientRect();
+    w = Math.max(1, Math.round(rect.width));
+    h = Math.max(1, Math.round(rect.height));
+    canvas.width = w;
+    canvas.height = h;
+  }
+
+  function onPointer(e) {
+    const rect = hero.getBoundingClientRect();
+    mx = (e.clientX - rect.left) / rect.width;
+    my = (e.clientY - rect.top) / rect.height;
+    hovering = true;
+  }
+
+  hero.addEventListener("pointermove", onPointer);
+  hero.addEventListener("pointerleave", () => {
+    hovering = false;
+  });
+
+  new ResizeObserver(resize).observe(hero);
+  resize();
+
+  const io = new IntersectionObserver((entries) => {
+    visible = entries[0]?.isIntersecting ?? true;
+  }, { threshold: 0.05 });
+  io.observe(hero);
+
+  hero.classList.add("is-liquid");
+
+  function frame() {
+    requestAnimationFrame(frame);
+    if (!visible) return;
+
+    t += 0.01;
+    smx += (mx - smx) * 0.08;
+    smy += (my - smy) * 0.08;
+
+    ctx.filter = "none";
+    const base = ctx.createLinearGradient(0, 0, w, 0);
+    base.addColorStop(0, "#7a2e72");
+    base.addColorStop(0.22, "#c22f77");
+    base.addColorStop(0.48, "#ced67b");
+    base.addColorStop(0.66, "#f2e4a7");
+    base.addColorStop(1, "#e15a45");
+    ctx.fillStyle = base;
+    ctx.fillRect(0, 0, w, h);
+    ctx.filter = `blur(${Math.max(36, Math.min(w, h) * 0.07)}px)`;
+
+    blobs.forEach((b, i) => {
+      const wanderX = Math.sin(t * (0.55 + i * 0.11) + i * 1.4) * 0.07;
+      const wanderY = Math.cos(t * (0.42 + i * 0.09) + i * 2.1) * 0.06;
+      let targetX = b.restX + wanderX;
+      let targetY = b.restY + wanderY;
+
+      if (hovering) {
+        const dx = smx - targetX;
+        const dy = smy - targetY;
+        const dist = Math.hypot(dx, dy) || 0.001;
+        const influence = Math.max(0, 1 - dist * 1.15);
+        targetX += dx * (0.28 + influence * 0.4);
+        targetY += dy * (0.28 + influence * 0.4);
+        const push = influence * 0.12;
+        targetX -= (dx / dist) * push;
+        targetY -= (dy / dist) * push;
+      }
+
+      b.x += (targetX - b.x) * b.speed;
+      b.y += (targetY - b.y) * b.speed;
+
+      const radius = Math.max(w, h) * b.r * (1 + Math.sin(t * 0.8 + i) * 0.06);
+      const gx = b.x * w;
+      const gy = b.y * h;
+      const g = ctx.createRadialGradient(gx, gy, 0, gx, gy, radius);
+      g.addColorStop(0, rgba(b.color, 1));
+      g.addColorStop(0.55, rgba(b.color, 0.7));
+      g.addColorStop(1, rgba(b.color, 0));
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(gx, gy, radius, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    if (hovering) {
+      const gx = smx * w;
+      const gy = smy * h;
+      const radius = Math.max(w, h) * 0.26;
+      const g = ctx.createRadialGradient(gx, gy, 0, gx, gy, radius);
+      g.addColorStop(0, "rgba(242, 228, 167, 0.45)");
+      g.addColorStop(1, "rgba(242, 228, 167, 0)");
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(gx, gy, radius, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    ctx.filter = "none";
+  }
+
+  requestAnimationFrame(frame);
+})();
+
+</script>
+</body>
+</html>

@@ -10,10 +10,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=3" />
+  <link rel="stylesheet" href="css/styles.css?v=8" />
 </head>
-<body>
+<body class="has-announcement">
   <div class="grain" aria-hidden="true"></div>
+
+  <!-- Barra Publicitaria Superior / Anuncio Promocional -->
+  <aside class="announcement-bar" role="complementary" aria-label="Aviso promocional">
+    <div class="container announcement-bar__inner">
+      <span class="announcement-bar__tag">⚡ Cupos Noviembre 2026</span>
+      <span class="announcement-bar__text">20% OFF en Identidad de Marca Completa + Manual de Estilo + Kit de Redes</span>
+      <a href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20aprovechar%20la%20oferta%20del%2020%25%20OFF%20en%20Identidad%20de%20Marca." class="announcement-bar__cta" target="_blank" rel="noopener">
+        Aprovechar oferta por WhatsApp &rarr;
+      </a>
+    </div>
+  </aside>
 
   <div class="preloader" id="preloader">
     <div class="preloader__inner">
@@ -31,14 +42,18 @@
       </span>
       <span class="brand__text">
         <strong>Bárbara Ruiz</strong>
-        <small>Diseñadora Gráfica</small>
+        <small>Diseño Gráfico &amp; Branding</small>
       </span>
     </a>
     <nav class="nav" id="nav">
-      <a href="#proyectos">Proyectos</a>
+      <a href="#proyectos">Portafolio</a>
       <a href="#servicios">Servicios</a>
+      <a href="#paquetes">Packs &amp; Planes</a>
+      <a href="#metodologia">Metodología</a>
       <a href="#sobre-mi">Sobre mí</a>
-      <a href="#contacto" class="nav__cta">Contacto</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto">Contacto</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -48,9 +63,13 @@
   <div class="menu-overlay" id="menuOverlay">
     <nav>
       <a href="#inicio">Inicio</a>
-      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#proyectos">Portafolio</a>
       <a href="#servicios">Servicios</a>
-      <a href="#proyectos">Proyectos</a>
+      <a href="#paquetes">Packs &amp; Precios</a>
+      <a href="#metodologia">Metodología</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#faq">Preguntas Frecuentes</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </div>
@@ -68,15 +87,39 @@
         <path d="M40 20 C 180 40, 220 140, 380 90" stroke="white" stroke-width="1.6"/>
       </svg>
       <div class="hero__content">
-        <p class="eyebrow reveal">Diseño gráfico · Marca personal</p>
+        <div class="hero__status-pill">
+          <span class="hero__status-dot"></span>
+          <span>Disponible para proyectos · Respuesta en &lt; 1 hora</span>
+        </div>
+        <p class="eyebrow">Diseño gráfico estratégico · Marca personal &amp; Comercial</p>
         <h1 class="hero__title">
           <span class="line">Diseño que se</span>
-          <span class="line">recuerda.</span>
+          <span class="line">recuerda y vende</span>
         </h1>
-        <p class="hero__sub">Identidad, campañas y piezas que hacen que tu negocio se vea tan claro como vende.</p>
+        <p class="hero__sub">Identidad visual de alto nivel, packaging y piezas publicitarias que transforman tu negocio en una marca referente, profesional y difícil de ignorar.</p>
+        
         <div class="hero__actions">
-          <a class="btn btn--ghost" href="#proyectos">Ver proyectos</a>
-          <a class="btn btn--solid" href="#contacto">Empezar un proyecto</a>
+          <a class="btn btn--whatsapp btn--pill" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20empezar%20un%20proyecto%20de%20dise%C3%B1o%20gr%C3%A1fico." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c0-5.445 4.43-9.875 9.877-9.875 2.64 0 5.122 1.03 6.987 2.898a9.825 9.825 0 012.89 6.978c-.002 5.446-4.431 9.876-9.874 9.876m8.397-18.271A11.782 11.782 0 0012.047 0C5.405 0 .007 5.397.007 12.04c0 2.122.553 4.195 1.604 6.017L0 24l6.103-1.601a11.83 11.83 0 005.94 1.59h.005c6.64 0 12.037-5.397 12.037-12.04 0-3.217-1.253-6.241-3.527-8.512"/></svg>
+            <span>Cotizar por WhatsApp</span>
+          </a>
+          <a class="btn btn--ghost btn--pill" href="#proyectos">Explorar Portafolio</a>
+        </div>
+
+        <!-- Social Proof Stats Bar -->
+        <div class="hero__stats">
+          <div class="hero__stat-item">
+            <span class="hero__stat-num">+50</span>
+            <span class="hero__stat-label">Marcas creadas</span>
+          </div>
+          <div class="hero__stat-item">
+            <span class="hero__stat-num">100%</span>
+            <span class="hero__stat-label">Archivos listos imprenta</span>
+          </div>
+          <div class="hero__stat-item">
+            <span class="hero__stat-num">5.0 ★</span>
+            <span class="hero__stat-label">Satisfacción garantizada</span>
+          </div>
         </div>
       </div>
       <a class="scroll-hint" href="#manifiesto">
@@ -85,10 +128,11 @@
       </a>
     </section>
 
+    <!-- Slider Infinito de Disciplinas / Especialidades -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
-        <span>Identidad visual · Branding · Anuncios · Redes sociales · Merch y POP · Packaging · Editorial · Dirección de arte · Identidad visual · Branding · Anuncios · Redes sociales · Merch y POP · Packaging · Editorial · Dirección de arte ·</span>
-        <span>Identidad visual · Branding · Anuncios · Redes sociales · Merch y POP · Packaging · Editorial · Dirección de arte · Identidad visual · Branding · Anuncios · Redes sociales · Merch y POP · Packaging · Editorial · Dirección de arte ·</span>
+        <span>Identidad Visual ✦ Branding Estratégico ✦ Publicidad Digital &amp; Impresa ✦ Redes Sociales ✦ Material POP &amp; Merch ✦ Packaging Premium ✦ Diseño Editorial ✦ Dirección de Arte ✦ Vectorización ✦ Identidad Visual ✦ Branding Estratégico ✦ Publicidad Digital &amp; Impresa ✦ Redes Sociales ✦ Material POP &amp; Merch ✦ Packaging Premium ✦ Diseño Editorial ✦ Dirección de Arte ✦ Vectorización ✦</span>
+        <span>Identidad Visual ✦ Branding Estratégico ✦ Publicidad Digital &amp; Impresa ✦ Redes Sociales ✦ Material POP &amp; Merch ✦ Packaging Premium ✦ Diseño Editorial ✦ Dirección de Arte ✦ Vectorización ✦ Identidad Visual ✦ Branding Estratégico ✦ Publicidad Digital &amp; Impresa ✦ Redes Sociales ✦ Material POP &amp; Merch ✦ Packaging Premium ✦ Diseño Editorial ✦ Dirección de Arte ✦ Vectorización ✦</span>
       </div>
     </div>
 
@@ -103,125 +147,361 @@
       </div>
     </section>
 
-    <section class="about" id="sobre-mi">
-      <div class="container about__grid">
-        <div class="about__copy">
-          <p class="section-kicker reveal">Sobre mí</p>
-          <h2 class="section-title reveal">Una diseñadora que traduce negocio en imagen.</h2>
-          <p class="reveal">Soy Bárbara Ruiz. Trabajo identidad visual, publicidad, redes y material POP para marcas que necesitan verse profesionales sin perder carácter.</p>
-          <p class="reveal">Cada proyecto empieza por lo que tienes que comunicar y a quién. El resultado es un sistema visual claro: se reconoce, se aplica y se recuerda.</p>
-          <a class="btn btn--outline" href="#contacto">Hablemos de tu marca</a>
-          <p class="about__note">De la idea a la pieza lista para producir o publicar.</p>
-        </div>
-        <div class="about__visual" aria-hidden="true">
-          <div class="pill pill--gradient delay-1"></div>
-          <div class="pill pill--photo delay-2">
-            <img src="assets/img/portrait-about.jpg" alt="Retrato de Bárbara Ruiz" />
+    <!-- BANNER PUBLICITARIO 1: Auditoría Visual Express (Alto Impacto) -->
+    <section class="container" aria-label="Banner de promoción especial">
+      <div class="promo-banner reveal">
+        <div class="promo-banner__grid">
+          <div>
+            <span class="promo-banner__badge">✦ Diagnóstico Inicial sin Costo</span>
+            <h2 class="promo-banner__title">¿Tu imagen actual <span>no refleja el verdadero valor</span> de tu negocio?</h2>
+            <p class="promo-banner__desc">Agenda una <strong>Auditoría Visual Express de 15 minutos</strong> sin ningún compromiso por WhatsApp. Analizamos tu logotipo, coherencia en redes y te decimos con honestidad qué ajustar para elevar tus ventas.</p>
+            <div class="promo-banner__actions">
+              <a href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20solicitar%20la%20Auditor%C3%ADa%20Visual%20Express%20gratuita%20para%20mi%20marca." target="_blank" rel="noopener" class="btn btn--whatsapp btn--pill">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c0-5.445 4.43-9.875 9.877-9.875 2.64 0 5.122 1.03 6.987 2.898a9.825 9.825 0 012.89 6.978c-.002 5.446-4.431 9.876-9.874 9.876m8.397-18.271A11.782 11.782 0 0012.047 0C5.405 0 .007 5.397.007 12.04c0 2.122.553 4.195 1.604 6.017L0 24l6.103-1.601a11.83 11.83 0 005.94 1.59h.005c6.64 0 12.037-5.397 12.037-12.04 0-3.217-1.253-6.241-3.527-8.512"/></svg>
+                <span>Solicitar Auditoría por WhatsApp</span>
+              </a>
+              <a href="#proyectos" class="btn btn--ghost btn--pill">Ver Casos de Éxito</a>
+            </div>
           </div>
-          <div class="pill pill--collage delay-3">
-            <video autoplay muted loop playsinline preload="metadata" poster="assets/img/portrait-collage.png">
-              <source src="assets/video/reel.mp4" type="video/mp4" />
-            </video>
+          <div class="promo-banner__visual">
+            <div class="promo-banner__card">
+              <div class="promo-banner__card-header">
+                <div class="promo-banner__card-icon">BR</div>
+                <div>
+                  <strong style="display:block; font-size:14px; color:#fff;">Diagnóstico Express</strong>
+                  <small style="color:var(--gold); font-size:11px;">100% Personalizado</small>
+                </div>
+              </div>
+              <ul class="promo-banner__card-list">
+                <li>Revisión de coherencia visual y logo</li>
+                <li>Análisis de paleta cromática &amp; tipografía</li>
+                <li>Evaluación de impacto frente a competidores</li>
+                <li>Recomendaciones directas y aplicables</li>
+              </ul>
+            </div>
           </div>
-          <div class="pill pill--solid delay-4"></div>
         </div>
       </div>
-      <div class="about__bar"></div>
     </section>
 
+    <!-- SERVICIOS PROFESIONALES ESTANDARIZADOS -->
     <section class="services" id="servicios">
       <div class="container">
         <div class="section-head">
-          <p class="section-kicker reveal">Servicios</p>
-          <h2 class="section-title reveal">Ocho formas de hacer que tu marca trabaje.</h2>
-          <p class="section-lead reveal">No vendo piezas sueltas. Construyo un sistema visual que se reconoce en logo, anuncio, redes, packaging y merch.</p>
+          <p class="section-kicker reveal">Especialidades &amp; Servicios</p>
+          <h2 class="section-title reveal">Soluciones de diseño gráfico orientadas a resultados.</h2>
+          <p class="section-lead reveal">No entrego archivos sueltos. Construyo un sistema gráfico coherente y profesional que se reconoce en cada punto de contacto con tu cliente.</p>
         </div>
 
         <div class="offer__grid">
-          <a class="offer-card" href="#identidad">
+          <!-- 01 Identidad Visual -->
+          <article class="offer-card reveal">
             <span class="offer-card__num">01</span>
             <span class="offer-card__icon" aria-hidden="true">
               <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1.7"/><path d="M16 8v16M8 16h16" stroke="currentColor" stroke-width="1.7"/></svg>
             </span>
             <h3>Identidad visual</h3>
-            <p>Logo, color y sistema para que te reconozcan a primera vista.</p>
-          </a>
-          <a class="offer-card" href="#contacto">
+            <p>Logo principal, secundario, isotipo y manual para que te reconozcan a primera vista.</p>
+            <ul class="offer-card__deliverables">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Archivos vectoriales (AI, SVG, PDF)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Paleta de color CMYK / RGB / HEX</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Guía de uso tipográfico</li>
+            </ul>
+            <a class="offer-card__action" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20cotizar%20el%20servicio%20de%20Identidad%20Visual." target="_blank" rel="noopener">
+              <span>Cotizar en WhatsApp</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- 02 Branding y Sistema -->
+          <article class="offer-card reveal">
             <span class="offer-card__num">02</span>
             <span class="offer-card__icon" aria-hidden="true">
               <svg viewBox="0 0 32 32" fill="none"><rect x="7" y="7" width="13" height="13" rx="2" stroke="currentColor" stroke-width="1.7"/><rect x="12" y="12" width="13" height="13" rx="2" stroke="currentColor" stroke-width="1.7"/></svg>
             </span>
             <h3>Branding y sistema</h3>
-            <p>Tipografía, usos y criterios para que la marca no se diluya al aplicarla.</p>
-          </a>
-          <a class="offer-card" href="#anuncios">
+            <p>Estructura sólida, retículas y criterios para que tu marca se mantenga consistente en cualquier medio.</p>
+            <ul class="offer-card__deliverables">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Brandbook &amp; Manual de estilo</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Patrones y elementos gráficos</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Criterios de composición</li>
+            </ul>
+            <a class="offer-card__action" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20cotizar%20el%20servicio%20de%20Branding%20y%20Sistema." target="_blank" rel="noopener">
+              <span>Cotizar en WhatsApp</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- 03 Anuncios Publicitarios -->
+          <article class="offer-card reveal">
             <span class="offer-card__num">03</span>
             <span class="offer-card__icon" aria-hidden="true">
               <svg viewBox="0 0 32 32" fill="none"><path d="M8 13h6l10-5v16l-10-5H8a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 21.5V24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
             </span>
             <h3>Anuncios publicitarios</h3>
-            <p>Piezas que venden. Composición, mensaje e impacto en un vistazo.</p>
-          </a>
-          <a class="offer-card" href="#redes">
+            <p>Piezas para campañas que capturan miradas, detienen el scroll y convierten prospectos en ventas.</p>
+            <ul class="offer-card__deliverables">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Creatividades Meta Ads &amp; Google</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Banners impresos y vallas</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Formatos optimizados por canal</li>
+            </ul>
+            <a class="offer-card__action" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20cotizar%20Anuncios%20Publicitarios." target="_blank" rel="noopener">
+              <span>Cotizar en WhatsApp</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- 04 Redes Sociales -->
+          <article class="offer-card reveal">
             <span class="offer-card__num">04</span>
             <span class="offer-card__icon" aria-hidden="true">
               <svg viewBox="0 0 32 32" fill="none"><rect x="6" y="6" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="18" y="6" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="6" y="18" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="18" y="18" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.7"/></svg>
             </span>
             <h3>Redes sociales</h3>
-            <p>Un feed coherente que parece marca, no un collage improvisado.</p>
-          </a>
-          <a class="offer-card" href="#merch">
+            <p>Un feed coherente, plantillas y recursos que comunican autoridad y profesionalismo.</p>
+            <ul class="offer-card__deliverables">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Plantillas editables (Canva/Photoshop)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Portadas para historias destacadas</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Estructura estética de feed</li>
+            </ul>
+            <a class="offer-card__action" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20cotizar%20Dise%C3%B1o%20para%20Redes%20Sociales." target="_blank" rel="noopener">
+              <span>Cotizar en WhatsApp</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- 05 Merch y POP -->
+          <article class="offer-card reveal">
             <span class="offer-card__num">05</span>
             <span class="offer-card__icon" aria-hidden="true">
               <svg viewBox="0 0 32 32" fill="none"><path d="M11 9h10l3 4v13H8V13l3-4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M11 9c0 2.4 2.2 4 5 4s5-1.6 5-4" stroke="currentColor" stroke-width="1.7"/></svg>
             </span>
             <h3>Merch y material POP</h3>
-            <p>La marca fuera de la pantalla: lo que se toca, se usa y se recuerda.</p>
-          </a>
-          <a class="offer-card" href="#contacto">
+            <p>La marca en el mundo real: textiles, stands, papelería de eventos y merchandising que tus clientes usan.</p>
+            <ul class="offer-card__deliverables">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Camisetas, gorras, bolsas tote</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Roll-ups, banners y exhibidores</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Archivos técnicos para imprenta</li>
+            </ul>
+            <a class="offer-card__action" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20cotizar%20Merch%20y%20Material%20POP." target="_blank" rel="noopener">
+              <span>Cotizar en WhatsApp</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- 06 Packaging -->
+          <article class="offer-card reveal">
             <span class="offer-card__num">06</span>
             <span class="offer-card__icon" aria-hidden="true">
               <svg viewBox="0 0 32 32" fill="none"><path d="M8 12 16 8l8 4v12l-8 4-8-4V12Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 12l8 4 8-4M16 16v12" stroke="currentColor" stroke-width="1.7"/></svg>
             </span>
-            <h3>Packaging</h3>
-            <p>Envases y etiquetas que se eligen en el lineal y se recuerdan después.</p>
-          </a>
-          <a class="offer-card" href="#contacto">
+            <h3>Packaging y etiquetas</h3>
+            <p>Diseño de empaques y etiquetas que destacan en el lineal, transmiten calidad y generan experiencia de unboxing.</p>
+            <ul class="offer-card__deliverables">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Troqueles y planos mecánicos</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Mockups 3D hiperrealistas</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Preparación para serigrafía/offset</li>
+            </ul>
+            <a class="offer-card__action" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20cotizar%20Packaging%20y%20Etiquetas." target="_blank" rel="noopener">
+              <span>Cotizar en WhatsApp</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- 07 Editorial y Papelería -->
+          <article class="offer-card reveal">
             <span class="offer-card__num">07</span>
             <span class="offer-card__icon" aria-hidden="true">
               <svg viewBox="0 0 32 32" fill="none"><path d="M9 7h11l4 4v14H9V7Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M20 7v4h4M12 16h8M12 20h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
             </span>
             <h3>Editorial y papelería</h3>
-            <p>Folletos, catálogos y papelería que se leen y se reconocen como marca.</p>
-          </a>
-          <a class="offer-card" href="#contacto">
+            <p>Catálogos corporativos, dossiers comerciales, tarjetas de presentación y hojas membretadas.</p>
+            <ul class="offer-card__deliverables">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Tarjetas de presentación &amp; carpetas</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Catálogos digitales interactivos y PDF</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Sangrados y marcas de corte listas</li>
+            </ul>
+            <a class="offer-card__action" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20cotizar%20Editorial%20y%20Papeler%C3%ADa." target="_blank" rel="noopener">
+              <span>Cotizar en WhatsApp</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- 08 Dirección de Arte -->
+          <article class="offer-card reveal">
             <span class="offer-card__num">08</span>
             <span class="offer-card__icon" aria-hidden="true">
               <svg viewBox="0 0 32 32" fill="none"><rect x="6" y="8" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.7"/><circle cx="16" cy="16" r="4" stroke="currentColor" stroke-width="1.7"/><path d="M9 8V6h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
             </span>
             <h3>Dirección de arte</h3>
-            <p>Campañas y piezas con un criterio único, de la idea a la entrega final.</p>
-          </a>
+            <p>Supervisión visual global para marcas en crecimiento: coherencia fotográfica, campañas y estilo consistente.</p>
+            <ul class="offer-card__deliverables">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Concepto y narrativa visual</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Guías fotográficas y de estilo</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Acompañamiento continuo</li>
+            </ul>
+            <a class="offer-card__action" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20cotizar%20Direcci%C3%B3n%20de%20Arte." target="_blank" rel="noopener">
+              <span>Cotizar en WhatsApp</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
         </div>
-        <p class="services__more reveal">¿Otro formato o varios a la vez? <a href="#contacto">Cuéntame el proyecto.</a></p>
+
+        <p class="services__more reveal">¿Buscas una combinación a medida o un proyecto integral? <a href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20tengo%20un%20proyecto%20personalizado%20y%20me%20gustar%C3%ADa%20conversar." target="_blank" rel="noopener">Escríbeme por WhatsApp y lo armamos juntos.</a></p>
       </div>
     </section>
 
+    <!-- PAQUETES & PLANES DESTACADOS (BANNERS PUBLICITARIOS) -->
+    <section class="packs" id="paquetes">
+      <div class="container">
+        <div class="section-head" style="text-align: center; margin-left: auto; margin-right: auto;">
+          <p class="section-kicker reveal">Packs Recomendados</p>
+          <h2 class="section-title reveal">Soluciones completas con inversión transparente.</h2>
+          <p class="section-lead reveal" style="margin-left: auto; margin-right: auto;">Diseñados para resolver las necesidades reales de tu negocio, con entregas estructuradas y acompañamiento de inicio a fin.</p>
+        </div>
+
+        <div class="packs__grid">
+          <!-- Pack 1: Starter -->
+          <div class="pack-card reveal">
+            <span class="pack-card__tag">Esencial</span>
+            <h3 class="pack-card__name">Identidad Starter</h3>
+            <p class="pack-card__desc">Ideal para profesionales y proyectos que inician y necesitan una presencia gráfica pulcra y coherente.</p>
+            <ul class="pack-card__features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Logotipo principal + versión reducida/isotipo</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Paleta de color corporativa (HEX/RGB/CMYK)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Selección y jerarquía tipográfica</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Archivos vectoriales listos para usar (AI, SVG, PNG)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Entrega en 7 a 10 días laborables</li>
+            </ul>
+            <a href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20me%20interesa%20el%20Pack%20Identidad%20Starter.%20%C2%BFPodemos%20hablar%3F" target="_blank" rel="noopener" class="btn btn--outline btn--pill">
+              Consultar por WhatsApp
+            </a>
+          </div>
+
+          <!-- Pack 2: Identidad 360 Pro (Featured) -->
+          <div class="pack-card pack-card--featured reveal">
+            <span class="pack-card__popular-badge">★ Más Elegido</span>
+            <span class="pack-card__tag">Completo 360°</span>
+            <h3 class="pack-card__name">Sistema de Marca Pro</h3>
+            <p class="pack-card__desc">Para empresas y marcas consolidadas que requieren un sistema visual robusto para vender en digital y físico.</p>
+            <ul class="pack-card__features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Logotipo + variantes responsivas + submarca</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <strong>Manual de Marca Completo</strong> (usos, retículas y normas)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Kit de Redes Sociales (9 plantillas editables + portadas)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Papelería corporativa básica (tarjetas + hoja membretada)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Mockups 3D hiperrealistas de aplicación</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <strong>Asesoría directa por WhatsApp durante el proceso</strong></li>
+            </ul>
+            <a href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20reservar%20el%20Pack%20Sistema%20de%20Marca%20Pro." target="_blank" rel="noopener" class="btn btn--whatsapp btn--pill">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c0-5.445 4.43-9.875 9.877-9.875 2.64 0 5.122 1.03 6.987 2.898a9.825 9.825 0 012.89 6.978c-.002 5.446-4.431 9.876-9.874 9.876m8.397-18.271A11.782 11.782 0 0012.047 0C5.405 0 .007 5.397.007 12.04c0 2.122.553 4.195 1.604 6.017L0 24l6.103-1.601a11.83 11.83 0 005.94 1.59h.005c6.64 0 12.037-5.397 12.037-12.04 0-3.217-1.253-6.241-3.527-8.512"/></svg>
+              <span>Elegir Pack Pro por WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- Pack 3: Campaña y Publicidad -->
+          <div class="pack-card reveal">
+            <span class="pack-card__tag">Campañas &amp; POP</span>
+            <h3 class="pack-card__name">Campaña &amp; Lanzamiento</h3>
+            <p class="pack-card__desc">Diseñado para marcas listas para anunciar un nuevo producto, evento o temporada con impacto masivo.</p>
+            <ul class="pack-card__features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Concepto creativo &amp; lema visual</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Set de anuncios digitales (Stories, Feeds, Banners web)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Material POP / gran formato (vallas, cartelería, flyers)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Asistencia técnica directa con tu imprenta</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Entrega de artes finales de alta resolución</li>
+            </ul>
+            <a href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20cotizar%20el%20Pack%20Campa%C3%B1a%20y%20Lanzamiento." target="_blank" rel="noopener" class="btn btn--outline btn--pill">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- METODOLOGÍA & PROCESO DE TRABAJO (4 FASES) -->
+    <section class="process" id="metodologia">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker reveal">Metodología Clara</p>
+          <h2 class="section-title reveal">Cómo trabajamos juntos paso a paso.</h2>
+          <p class="section-lead reveal">Un proceso transparente, sin rodeos y pensado para que disfrutes ver nacer la identidad de tu negocio.</p>
+        </div>
+
+        <div class="process__grid">
+          <!-- Paso 01 -->
+          <div class="process-step reveal">
+            <span class="process-step__number">01</span>
+            <h3>Briefing &amp; Diagnóstico</h3>
+            <p>Hablamos por WhatsApp o videollamada para conocer tu modelo de negocio, a quién le vendes y qué imagen deseas proyectar.</p>
+            <span class="process-step__badge">Fase de Análisis</span>
+          </div>
+
+          <!-- Paso 02 -->
+          <div class="process-step reveal">
+            <span class="process-step__number">02</span>
+            <h3>Dirección de Arte &amp; Moodboard</h3>
+            <p>Defino la ruta conceptual, exploración tipográfica y paletas de color con referencias visuales alineadas a tu sector.</p>
+            <span class="process-step__badge">Fase Estratégica</span>
+          </div>
+
+          <!-- Paso 03 -->
+          <div class="process-step reveal">
+            <span class="process-step__number">03</span>
+            <h3>Diseño &amp; Aplicaciones Reales</h3>
+            <p>Creo las propuestas visuales y te las presento montadas en mockups reales (empaques, pantallas, papelería) para que veas el resultado exacto.</p>
+            <span class="process-step__badge">Fase Creativa</span>
+          </div>
+
+          <!-- Paso 04 -->
+          <div class="process-step reveal">
+            <span class="process-step__number">04</span>
+            <h3>Entrega Maestra &amp; Guía de Uso</h3>
+            <p>Recibes todos tus archivos organizados por carpetas en formatos editables y listos para imprenta o web, con guía explicativa.</p>
+            <span class="process-step__badge">Archivos Listos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDER INFINITO DE HERRAMIENTAS Y ESTÁNDARES -->
+    <div class="tools-ticker" aria-hidden="true">
+      <div class="tools-ticker__track">
+        <span>Adobe Illustrator</span>
+        <span>Adobe Photoshop</span>
+        <span>Adobe InDesign</span>
+        <span>Figma UI/UX</span>
+        <span>Adobe After Effects</span>
+        <span>Impresión Offset &amp; Digital</span>
+        <span>Colores Pantone®</span>
+        <span>Vectorizado SVG / EPS / PDF</span>
+        <span>Adobe Illustrator</span>
+        <span>Adobe Photoshop</span>
+        <span>Adobe InDesign</span>
+        <span>Figma UI/UX</span>
+        <span>Adobe After Effects</span>
+        <span>Impresión Offset &amp; Digital</span>
+        <span>Colores Pantone®</span>
+        <span>Vectorizado SVG / EPS / PDF</span>
+      </div>
+    </div>
+
+    <!-- PORTAFOLIO CON SLIDER INFINITO MEJORADO -->
     <section class="projects" id="proyectos">
       <div class="container">
         <div class="projects__head">
           <div>
             <p class="section-kicker reveal">Portafolio</p>
-            <h2 class="section-title reveal">Algunos proyectos</h2>
+            <h2 class="section-title reveal">Casos de éxito y marcas reales.</h2>
           </div>
           <div class="slider-nav">
             <button class="nav-circle" id="prevProject" type="button" aria-label="Anterior">‹</button>
             <button class="nav-circle" id="nextProject" type="button" aria-label="Siguiente">›</button>
           </div>
         </div>
-        <p class="section-lead projects__lead reveal">Identidades, campañas y piezas reales. Cada una resuelve un problema concreto de marca.</p>
+        <p class="section-lead projects__lead reveal">Proyectos desarrollados para resolver necesidades concretas de posicionamiento, ventas y coherencia gráfica.</p>
         <div class="slider-wrap">
           <div class="slider" id="projectSlider">
+            <!-- Proyecto 1 -->
             <article class="slide pcard">
               <div class="pcard__media">
                 <img src="assets/img/proj-g404.jpg" alt="Identidad Estudio G404" />
@@ -233,7 +513,7 @@
                   <span class="pcard__avatar">BR</span>
                   <div>
                     <h3>Estudio G404</h3>
-                    <small>Identidad tech</small>
+                    <small>Identidad tech &amp; digital</small>
                   </div>
                 </div>
                 <div class="pcard__side">
@@ -242,46 +522,50 @@
                 </div>
               </div>
               <div class="pcard__footer">
-                <a class="pcard__btn" href="#contacto">Quiero uno así</a>
-                <a class="pcard__link" href="#identidad">Ver más</a>
+                <a class="pcard__btn" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20vi%20el%20proyecto%20de%20Estudio%20G404%20y%20quiero%20cotizar%20uno%20similar%20para%20mi%20marca." target="_blank" rel="noopener">Quiero uno así</a>
+                <a class="pcard__link" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20%C2%BFme%20cuentas%20m%C3%A1s%20detalles%20del%20caso%20Estudio%20G404%3F" target="_blank" rel="noopener">Consultar</a>
               </div>
             </article>
+
+            <!-- Proyecto 2 -->
             <article class="slide pcard">
               <div class="pcard__media pcard__media--contain">
                 <img src="assets/img/proj-dipollos.png" alt="Logo Di-Pollos" />
-                <span class="pcard__badge">Nuevo</span>
+                <span class="pcard__badge">Gastronomía</span>
               </div>
-              <p class="pcard__meta">Branding gastronómico</p>
+              <p class="pcard__meta">Branding gastronómico &amp; packaging</p>
               <div class="pcard__body">
                 <div class="pcard__who">
                   <span class="pcard__avatar">BR</span>
                   <div>
                     <h3>Di-Pollos</h3>
-                    <small>Tu hogar, tu ritmo, tu pollo</small>
+                    <small>Cadena gastronómica</small>
                   </div>
                 </div>
                 <div class="pcard__side">
                   <span>Servicio</span>
-                  <strong>Logo</strong>
+                  <strong>Logo &amp; Pack</strong>
                 </div>
               </div>
               <div class="pcard__footer">
-                <a class="pcard__btn" href="#contacto">Quiero uno así</a>
-                <a class="pcard__link" href="#identidad">Ver más</a>
+                <a class="pcard__btn" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20me%20gust%C3%B3%20el%20logo%20de%20Di-Pollos%20y%20quiero%20cotizar%20para%20mi%20negocio%20gastron%C3%B3mico." target="_blank" rel="noopener">Quiero uno así</a>
+                <a class="pcard__link" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quisiera%20saber%20m%C3%A1s%20del%20branding%20de%20Di-Pollos." target="_blank" rel="noopener">Consultar</a>
               </div>
             </article>
+
+            <!-- Proyecto 3 -->
             <article class="slide pcard">
               <div class="pcard__media">
                 <img src="assets/img/proj-networking.jpg" alt="Networking HUB" />
                 <span class="pcard__badge">Identidad</span>
               </div>
-              <p class="pcard__meta">Marca de comunidad</p>
+              <p class="pcard__meta">Marca de comunidad &amp; eventos</p>
               <div class="pcard__body">
                 <div class="pcard__who">
                   <span class="pcard__avatar">BR</span>
                   <div>
                     <h3>Networking HUB</h3>
-                    <small>Identidad digital</small>
+                    <small>Identidad digital &amp; POP</small>
                   </div>
                 </div>
                 <div class="pcard__side">
@@ -290,46 +574,50 @@
                 </div>
               </div>
               <div class="pcard__footer">
-                <a class="pcard__btn" href="#contacto">Quiero uno así</a>
-                <a class="pcard__link" href="#identidad">Ver más</a>
+                <a class="pcard__btn" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20vi%20el%20proyecto%20Networking%20HUB%20y%20quiero%20cotizar%20uno%20para%20mi%20empresa." target="_blank" rel="noopener">Quiero uno así</a>
+                <a class="pcard__link" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20me%20interesa%20la%20identidad%20de%20Networking%20HUB." target="_blank" rel="noopener">Consultar</a>
               </div>
             </article>
+
+            <!-- Proyecto 4 -->
             <article class="slide pcard">
               <div class="pcard__media">
                 <img src="assets/img/proj-cambre.jpg" alt="Club Béisbol y Sófbol Cambre" />
                 <span class="pcard__badge">Campaña</span>
               </div>
-              <p class="pcard__meta">Campaña 35 aniversario</p>
+              <p class="pcard__meta">Campaña 35 aniversario &amp; Merch</p>
               <div class="pcard__body">
                 <div class="pcard__who">
                   <span class="pcard__avatar">BR</span>
                   <div>
                     <h3>CBS Cambre</h3>
-                    <small>Campaña deportiva</small>
+                    <small>Campaña deportiva oficial</small>
                   </div>
                 </div>
                 <div class="pcard__side">
                   <span>Servicio</span>
-                  <strong>Ads</strong>
+                  <strong>Ads &amp; Merch</strong>
                 </div>
               </div>
               <div class="pcard__footer">
-                <a class="pcard__btn" href="#contacto">Quiero uno así</a>
-                <a class="pcard__link" href="#anuncios">Ver más</a>
+                <a class="pcard__btn" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20vi%20la%20campa%C3%B1a%20de%20CBS%20Cambre%20y%20quiero%20cotizar%20campa%C3%B1a%20y%20merchandising." target="_blank" rel="noopener">Quiero uno así</a>
+                <a class="pcard__link" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20%C2%BFqu%C3%A9%20incluy%C3%B3%20la%20campa%C3%B1a%20de%20CBS%20Cambre%3F" target="_blank" rel="noopener">Consultar</a>
               </div>
             </article>
+
+            <!-- Proyecto 5 -->
             <article class="slide pcard">
               <div class="pcard__media">
                 <img src="assets/img/proj-marka.jpg" alt="Marka beciña" />
                 <span class="pcard__badge">Identidad</span>
               </div>
-              <p class="pcard__meta">Identidad de marca local</p>
+              <p class="pcard__meta">Identidad de marca local &amp; retail</p>
               <div class="pcard__body">
                 <div class="pcard__who">
                   <span class="pcard__avatar">BR</span>
                   <div>
                     <h3>Marka beciña</h3>
-                    <small>Marca vecina</small>
+                    <small>Comercio y cercanía</small>
                   </div>
                 </div>
                 <div class="pcard__side">
@@ -338,22 +626,24 @@
                 </div>
               </div>
               <div class="pcard__footer">
-                <a class="pcard__btn" href="#contacto">Quiero uno así</a>
-                <a class="pcard__link" href="#identidad">Ver más</a>
+                <a class="pcard__btn" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20me%20gust%C3%B3%20la%20identidad%20de%20Marka%20beci%C3%B1a%20para%20un%20comercio%20local." target="_blank" rel="noopener">Quiero uno así</a>
+                <a class="pcard__link" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20de%20Marka%20beci%C3%B1a." target="_blank" rel="noopener">Consultar</a>
               </div>
             </article>
+
+            <!-- Proyecto 6 -->
             <article class="slide pcard">
               <div class="pcard__media">
                 <img src="assets/img/svc-ads.jpg" alt="Distribuidora V&amp;G" />
                 <span class="pcard__badge">Publicidad</span>
               </div>
-              <p class="pcard__meta">Anuncio publicitario</p>
+              <p class="pcard__meta">Anuncio publicitario &amp; catálogo</p>
               <div class="pcard__body">
                 <div class="pcard__who">
                   <span class="pcard__avatar">BR</span>
                   <div>
                     <h3>Distribuidora V&amp;G</h3>
-                    <small>Pieza de campaña</small>
+                    <small>Campaña de producto</small>
                   </div>
                 </div>
                 <div class="pcard__side">
@@ -362,8 +652,8 @@
                 </div>
               </div>
               <div class="pcard__footer">
-                <a class="pcard__btn" href="#contacto">Quiero uno así</a>
-                <a class="pcard__link" href="#anuncios">Ver más</a>
+                <a class="pcard__btn" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20cotizar%20anuncios%20publicitarios%20como%20los%20de%20Distribuidora%20V%26G." target="_blank" rel="noopener">Quiero uno así</a>
+                <a class="pcard__link" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quisiera%20detalles%20de%20las%20piezas%20de%20Distribuidora%20V%26G." target="_blank" rel="noopener">Consultar</a>
               </div>
             </article>
           </div>
@@ -469,28 +759,50 @@
       </div>
     </section>
 
+    <!-- TESTIMONIOS CON CALIFICACIÓN 5 ESTRELLAS -->
     <section class="quotes" id="testimonios">
       <div class="container quotes__grid">
         <div class="quotes__intro">
-          <h2 class="quotes__title reveal">Valor que se nota en marcas distintas.</h2>
-          <p class="quotes__lead reveal">Identidad, campañas y piezas que ya están trabajando para negocios reales. El siguiente puede ser el tuyo.</p>
-          <a class="quotes__cta" href="#contacto">Hablemos de tu marca</a>
+          <p class="section-kicker reveal">Opiniones Reales</p>
+          <h2 class="quotes__title reveal">Valor y resultados tangibles para marcas reales.</h2>
+          <p class="quotes__lead reveal">Identidad, campañas y piezas que ya están trabajando para negocios de distintos sectores. El siguiente puede ser el tuyo.</p>
+          <a class="btn btn--whatsapp btn--pill" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20unirme%20a%20tus%20clientes%20satisfechos%20y%20crear%20mi%20marca." target="_blank" rel="noopener" style="display: inline-flex; width: fit-content;">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c0-5.445 4.43-9.875 9.877-9.875 2.64 0 5.122 1.03 6.987 2.898a9.825 9.825 0 012.89 6.978c-.002 5.446-4.431 9.876-9.874 9.876m8.397-18.271A11.782 11.782 0 0012.047 0C5.405 0 .007 5.397.007 12.04c0 2.122.553 4.195 1.604 6.017L0 24l6.103-1.601a11.83 11.83 0 005.94 1.59h.005c6.64 0 12.037-5.397 12.037-12.04 0-3.217-1.253-6.241-3.527-8.512"/></svg>
+            <span>Hablemos por WhatsApp</span>
+          </a>
         </div>
         <div class="quotes__stack">
-          <article class="quote-card">
+          <!-- Testimonio 1 -->
+          <article class="quote-card reveal">
+            <div class="stars-row" aria-label="Calificación 5 de 5 estrellas">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
             <span class="quote-card__mark" aria-hidden="true">“</span>
-            <p>Pasamos de un logo suelto a un sistema que se reconoce en web, redes y merch. Por fin la marca se ve como el negocio que somos.</p>
+            <p>Pasamos de un logo suelto a un sistema que se reconoce en web, redes y merch. Por fin la marca se ve como la empresa consolidada que somos.</p>
             <div class="quote-card__foot">
               <div>
                 <strong>Orión García</strong>
-                <span>Estudio G404</span>
+                <span>Director · Estudio G404</span>
               </div>
               <span class="quote-card__avatar" aria-hidden="true">OG</span>
             </div>
           </article>
-          <article class="quote-card">
+
+          <!-- Testimonio 2 -->
+          <article class="quote-card reveal">
+            <div class="stars-row" aria-label="Calificación 5 de 5 estrellas">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
             <span class="quote-card__mark" aria-hidden="true">“</span>
-            <p>El branding tenía que ser cercano y con carácter. Entendió el tono a la primera y las piezas se aplicaron sin perder consistencia.</p>
+            <p>El branding tenía que ser cercano y con carácter gastronómico. Bárbara captó el tono de inmediato y los empaques se imprimieron perfectos sin ningún error de imprenta.</p>
             <div class="quote-card__foot">
               <div>
                 <strong>Equipo Di-Pollos</strong>
@@ -499,9 +811,18 @@
               <span class="quote-card__avatar quote-card__avatar--gold" aria-hidden="true">DP</span>
             </div>
           </article>
-          <article class="quote-card">
+
+          <!-- Testimonio 3 -->
+          <article class="quote-card reveal">
+            <div class="stars-row" aria-label="Calificación 5 de 5 estrellas">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
             <span class="quote-card__mark" aria-hidden="true">“</span>
-            <p>La campaña del aniversario se leyó inmediata: fuerte, clara y con identidad de club. Eso es lo que necesitábamos para que se recordara.</p>
+            <p>La campaña del aniversario fue potente: fuerte, clara y con auténtica identidad de club. Se aplicó en camisetas, vallas y redes con un impacto increíble.</p>
             <div class="quote-card__foot">
               <div>
                 <strong>CBS Cambre</strong>
@@ -514,43 +835,158 @@
       </div>
     </section>
 
+    <!-- PREGUNTAS FRECUENTES (FAQ INTERACTIVO) -->
+    <section class="faq" id="faq">
+      <div class="container faq__container">
+        <div class="section-head" style="text-align: center; margin-left: auto; margin-right: auto;">
+          <p class="section-kicker reveal">Dudas Resueltas</p>
+          <h2 class="section-title reveal">Preguntas frecuentes</h2>
+          <p class="section-lead reveal" style="margin-left: auto; margin-right: auto;">Todo lo que necesitas saber antes de dar el paso e iniciar el diseño de tu marca.</p>
+        </div>
+
+        <div class="faq__list">
+          <!-- Pregunta 1 -->
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>¿Qué archivos y formatos recibo al finalizar el proyecto?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Recibes un paquete organizado en carpetas con archivos vectoriales editables (<strong>Adobe Illustrator .AI, EPS y SVG</strong>) que nunca pierden resolución al ampliarse, archivos para imprenta en <strong>PDF de alta calidad</strong> (con sangrados y perfiles de color CMYK), e imágenes optimizadas en <strong>PNG de alta resolución con fondo transparente</strong> y JPG para uso digital.
+              </div>
+            </div>
+          </div>
+
+          <!-- Pregunta 2 -->
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>¿Cuánto tiempo demora el desarrollo de una identidad completa?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Un proyecto de Identidad Visual suele tardar entre <strong>10 y 15 días laborables</strong>. Para piezas publicitarias específicas o material POP puntual, los plazos van de <strong>3 a 5 días</strong>. Si tienes una fecha límite o lanzamiento urgente, podemos acordar un cronograma prioritario.
+              </div>
+            </div>
+          </div>
+
+          <!-- Pregunta 3 -->
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>¿Cómo es la modalidad de pago?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Normalmente trabajamos con un <strong>50% de anticipo al inicio</strong> para reservar cupo en agenda y comenzar la fase de briefing y exploración, y el <strong>50% restante a la aprobación final</strong>, justo antes del envío de los archivos maestros editables.
+              </div>
+            </div>
+          </div>
+
+          <!-- Pregunta 4 -->
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>¿Incluye rondas de revisión y ajustes?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                ¡Por supuesto! Cada proyecto incluye <strong>rondas de revisión estructuradas</strong> para ajustar colores, tipografías y composición hasta que quedes 100% satisfecho con tu nueva marca. Mi objetivo es que te sientas plenamente orgulloso de tu imagen.
+              </div>
+            </div>
+          </div>
+
+          <!-- Pregunta 5 -->
+          <div class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>¿Trabajas con clientes internacionales fuera de España?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Sí. Trabajo con marcas de España, Latinoamérica, Estados Unidos y Europa. La comunicación se realiza de forma ágil y directa vía <strong>WhatsApp y Google Meet</strong>, con entregas en la nube organizadas y accesibles en cualquier momento.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="faq__cta reveal">¿Tienes otra pregunta en mente? <a href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20tengo%20una%20consulta%20antes%20de%20empezar%20mi%20dise%C3%B1o." target="_blank" rel="noopener">Escríbeme por WhatsApp y te respondo al momento.</a></p>
+      </div>
+    </section>
+
+    <!-- BANNER PUBLICITARIO DE CIERRE / CTA BAND -->
+    <section class="cta-band" id="merch">
+      <div class="cta-band__bg"></div>
+      <div class="cta-band__content">
+        <h2 class="cta-band__phrase">Si tu marca no se recuerda, no existe.</h2>
+        <p class="cta-band__sub">Elevemos hoy mismo la imagen de tu negocio. Hablemos de tus metas y recibe una propuesta visual clara y lista para producir.</p>
+        
+        <div style="margin-bottom: 28px;">
+          <a class="btn btn--whatsapp btn--pill" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20iniciar%20un%20proyecto%20de%20dise%C3%B1o%20gr%C3%A1fico." target="_blank" rel="noopener" style="font-size: 15px; padding: 16px 32px;">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width: 22px; height: 22px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c0-5.445 4.43-9.875 9.877-9.875 2.64 0 5.122 1.03 6.987 2.898a9.825 9.825 0 012.89 6.978c-.002 5.446-4.431 9.876-9.874 9.876m8.397-18.271A11.782 11.782 0 0012.047 0C5.405 0 .007 5.397.007 12.04c0 2.122.553 4.195 1.604 6.017L0 24l6.103-1.601a11.83 11.83 0 005.94 1.59h.005c6.64 0 12.037-5.397 12.037-12.04 0-3.217-1.253-6.241-3.527-8.512"/></svg>
+            <span>Conversar ahora por WhatsApp</span>
+          </a>
+        </div>
+
+        <form class="cta-band__form" id="ctaLead">
+          <label class="visually-hidden" for="ctaEmail">Correo electrónico</label>
+          <input id="ctaEmail" type="email" name="email" required placeholder="O déjame tu correo electrónico" autocomplete="email" />
+          <button type="submit">Enviar a WhatsApp</button>
+        </form>
+        <ul class="cta-band__perks">
+          <li>Respuesta directa por WhatsApp</li>
+          <li>Sin compromiso ni costes ocultos</li>
+          <li>Asesoramiento inicial personalizado</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FORMULARIO DE CONTACTO -->
     <section class="contact" id="contacto">
       <div class="container contact__grid">
         <div>
-          <p class="section-kicker reveal">Contacto</p>
+          <p class="section-kicker reveal">Contacto Directo</p>
           <h2 class="section-title reveal">Cuéntame qué necesita tu marca.</h2>
-          <p class="section-lead reveal">Respuesta directa por WhatsApp. Si tienes briefing, logo actual o referencias, mejor: llegamos antes al resultado.</p>
+          <p class="section-lead reveal">Respuesta directa por WhatsApp. Si tienes briefing, logo actual o referencias visuales, mejor: llegamos antes al resultado.</p>
           <ul class="contact__points">
-            <li>Identidad nueva o rediseño</li>
-            <li>Campaña, redes o material POP</li>
-            <li>Proyectos para pymes, clubs y marcas locales</li>
+            <li>Identidad nueva o rediseño integral</li>
+            <li>Campañas, anuncios y material POP</li>
+            <li>Packaging, papelería y diseño para imprenta</li>
+            <li>Proyectos para pymes, profesionales y marcas locales</li>
           </ul>
         </div>
         <form class="contact__form" id="contactForm">
           <label>
             Nombre
-            <input type="text" name="name" required placeholder="Tu nombre" />
+            <input type="text" name="name" required placeholder="Tu nombre o negocio" />
           </label>
           <label>
-            Proyecto
+            Servicio que necesitas
             <select name="type" required>
-              <option value="" disabled selected>Qué necesitas</option>
-              <option>Identidad visual</option>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option>Pack Identidad Starter</option>
+              <option>Pack Sistema de Marca Pro (360°)</option>
+              <option>Pack Campaña y Lanzamiento</option>
+              <option>Identidad visual &amp; Logotipo</option>
               <option>Branding y sistema</option>
               <option>Anuncios publicitarios</option>
               <option>Redes sociales</option>
               <option>Merch y material POP</option>
-              <option>Packaging</option>
+              <option>Packaging y etiquetas</option>
               <option>Editorial y papelería</option>
               <option>Dirección de arte</option>
-              <option>Otro / varios</option>
+              <option>Proyecto a medida / Otro</option>
             </select>
           </label>
           <label>
-            Mensaje
-            <textarea name="message" rows="4" required placeholder="Marca, plazo y qué quieres lograr"></textarea>
+            Mensaje / Detalles
+            <textarea name="message" rows="4" required placeholder="Cuéntame sobre tu marca, plazos o qué buscas lograr"></textarea>
           </label>
-          <button class="btn btn--solid" type="submit">Enviar por WhatsApp</button>
+          <button class="btn btn--whatsapp btn--pill" type="submit" style="width: 100%; justify-content: center;">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c0-5.445 4.43-9.875 9.877-9.875 2.64 0 5.122 1.03 6.987 2.898a9.825 9.825 0 012.89 6.978c-.002 5.446-4.431 9.876-9.874 9.876m8.397-18.271A11.782 11.782 0 0012.047 0C5.405 0 .007 5.397.007 12.04c0 2.122.553 4.195 1.604 6.017L0 24l6.103-1.601a11.83 11.83 0 005.94 1.59h.005c6.64 0 12.037-5.397 12.037-12.04 0-3.217-1.253-6.241-3.527-8.512"/></svg>
+            <span>Enviar mensaje por WhatsApp</span>
+          </button>
         </form>
       </div>
     </section>
@@ -564,17 +1000,21 @@
         </span>
         <span class="brand__text">
           <strong>Bárbara Ruiz</strong>
-          <small>Diseñadora Gráfica</small>
+          <small>Diseñadora Gráfica &amp; Dirección de Arte</small>
         </span>
       </div>
-      <p>© <span id="year"></span> Bárbara Ruiz. Diseño con carácter.</p>
+      <p>© <span id="year"></span> Bárbara Ruiz. Todos los derechos reservados · Diseño con carácter.</p>
     </div>
   </footer>
 
-  <!-- Cambia data-phone por el número real, con código de país y sin signos. -->
-  <a class="wa-float" id="whatsappBtn" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20hablar%20de%20un%20proyecto%20de%20dise%C3%B1o." target="_blank" rel="noopener" data-phone="34602803747" aria-label="Contactar por WhatsApp">
+  <!-- Botón Flotante con Tooltip Interactivo de WhatsApp -->
+  <a class="wa-float" id="whatsappBtn" href="https://wa.me/34602803747?text=Hola%20B%C3%A1rbara%2C%20quiero%20hablar%20de%20un%20proyecto%20de%20dise%C3%B1o%20gr%C3%A1fico." target="_blank" rel="noopener" data-phone="34602803747" aria-label="Contactar por WhatsApp">
     <span class="wa-float__pulse"></span>
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c0-5.445 4.43-9.875 9.877-9.875 2.64 0 5.122 1.03 6.987 2.898a9.825 9.825 0 012.89 6.978c-.002 5.446-4.431 9.876-9.874 9.876m8.397-18.271A11.782 11.782 0 0012.047 0C5.405 0 .007 5.397.007 12.04c0 2.122.553 4.195 1.604 6.017L0 24l6.103-1.601a11.83 11.83 0 005.94 1.59h.005c6.64 0 12.037-5.397 12.037-12.04 0-3.217-1.253-6.241-3.527-8.512"/></svg>
+    <div class="wa-float__tooltip">
+      <span class="wa-float__tooltip-dot"></span>
+      <span>En línea · Respuesta rápida</span>
+    </div>
     <span class="wa-float__label">WhatsApp</span>
   </a>
 
